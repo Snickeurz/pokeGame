@@ -1,0 +1,125 @@
+<div class="row">
+        <!-- start container -->
+        <div class="container container-nav">
+            <!-- start div row -->
+            <div class="row">
+                <div class="btn-group btn-group-justified">
+                    <!-- bouton group for nouveautées -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-nav" onclick="format('compte','show');">
+                            <span class="fa fa-user"></span>
+                            <!-- onglet titre -->
+                            <p>Mon compte</p>
+                        </button>
+                    </div>
+                    <!-- end bouton group for nouveautées -->
+                    <!-- bouton group for boutique -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-nav" onclick="format('annonces','show');">
+                            <span class="fa fa-shopping-cart"></span>
+                            <!-- onglet titre -->
+                            <p>Annonces</p>
+                        </button>
+                    </div>
+                    <!-- end bouton group for boutique -->
+                    <!-- boutton group for installation -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-nav" onclick="format('pokemon','show')" >
+                            <span class="fa fa-indent"></span>
+                            <!-- onglet titre -->
+                            <p>Mes pokemons</p>
+                        </button>
+                    </div>
+                    <!-- end bouton group for Installation -->
+                    <!-- boutton group for contact -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-nav" onclick="format('combat','play')">
+                            <span class="fa fa-fire"></span>
+                            <!-- onglet titre -->
+                            <p>La chasse</p>
+                        </button>
+                    </div>
+                    <!-- end button group for contact -->
+                    <!-- button group for a propos -->
+                    <div class="btn-group">
+
+                        <button type="button" class="btn btn-nav" onclick="format('aide','faq');">
+                            <span class="fa fa-question-circle"></span>
+                            <!-- onglet titre -->
+                            <p>Aide</p>
+                        </button>
+                    </div>
+                    <!-- end button group for a propos -->
+                </div>
+            </div>
+            <!-- end div row -->
+        </div>
+        <!-- end container -->
+
+</div>
+<!--Script  naviguation -->
+    <!--javascript pour effet barre de naviguation -->
+	<script type="text/javascript">
+	$(function() {
+        /*add*/
+        var etat = getParam('uc');
+        var toactivate="";
+        //alert(etat);
+        switch(etat) {
+            case 'annonces' :
+                    toactivate=1;
+                break;
+            case 'pokemon':
+                    toactivate=2;
+                break;
+            case 'combat':
+                    toactivate=3;
+                break;
+            case 'aide':
+                    toactivate=4;
+                break;
+            default:
+                  toactivate=0;
+        }
+        //end add
+        //activeEl=integer;
+        var activeEl =toactivate;
+        //alert(activeEl);
+		var items = $('.btn-nav');
+		$( items[activeEl] ).addClass('active');
+		$( ".btn-nav" ).click(function() {
+			// On cherche les items avec la classe activ� et on leurs enl�ve l'attribut active 
+			$( items[activeEl] ).removeClass('active');
+			// On active l'effet sur le nouvel onglet sur lequel on click
+			$( this ).addClass('active');
+			activeEl = $( ".btn-nav" ).index( this );
+		});
+	});
+	</script>
+    <!-- fin javascript pour effet barre de nav -->
+    <script>
+        function format(arg1,arg2) {
+           // alert(arg1);
+           // alert(arg2);
+            var way = "uc="+arg1+"&action="+arg2;
+            var path= "index.php?"+way;
+            //alert(path);
+            //alert(way);
+            window.location.replace(path);
+        }
+    </script>
+    <script>
+        function getParam(param) {
+        var varsp = {};
+        window.location.href.replace(/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+                function( m, key, value ) { // callback
+                    varsp[key] = value !== undefined ? value :null;
+                }
+        );
+        if ( param ) {
+            return varsp[param] ? varsp[param] : null;
+        }
+        return varsp ;
+    }
+    </script>
+<!-- fin de script pour barre de nav -->

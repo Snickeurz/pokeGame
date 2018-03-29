@@ -1,0 +1,185 @@
+
+<body>
+
+<!-- titre loginInterface.html-->=
+    <div class="text-center titre_login">
+        <h2>POKEGAME - V 1.0</h2>
+    </div>
+
+<!-- si lutilisateur vient de se créer un compte & que c'est réussis, afficher ce qui suit : -->
+
+    <div class="container hide" id="succes_creation_compte">
+
+        <div class="alert alert-info">
+            <strong>Votre compte a été crée avec succès :</strong> Vous pouvez dès à présent vous connecter.
+            <button type="button pull-right" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
+<!-- start aa sec -->
+<div class="aa_sec">
+    <!--start aa txt -->
+    <div class="aa_txt">
+
+            <!-- affichage login -->
+                    <!-- start container -->
+            <div class="containerLogin">
+                <!-- start card container -->
+                <div class="cardLogin card-container">
+                    <!-- appel avatar login -->
+                    <img id="profile-img" class="profile-img-card" src="ressources/images/login.jpg" />
+                    <!-- fin avatar-->
+
+                    <!-- form connexion -->
+                    <form class="form-signin"  name="form" id="form" method="POST" action="login.php">
+                        <span id="reauth-email" class="reauth-email"></span>
+                        <!-- email group -->
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Adresse e-mail.." required autofocus>
+                        <!-- end email group -->
+                        <!-- pass group -->
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password.." required>
+                        <!-- end pass group -->
+                        <!-- go -->
+                        <button class="btn btn-lg btn-success btn-block btn-signin" type="submit">Connexion <span class="fa fa-arrow-right"></span></button>
+                    </form>
+                    <!-- /form -->
+                    <button class="btn btn-lg btn-info btn-block  btn-signin" data-toggle="modal" data-target=".bd-example-modal-lg">Inscription <span class="fa fa-edit"></span></button>
+                    <br>
+                    <a href="#"data-target=".bs-example-modal-md" data-toggle="modal">Pourquoi s'inscrire ?</a>
+
+                </div><!-- /card-container -->
+            </div><!-- /container -->
+
+        </span>
+    </div>
+    <!-- end aa txt -->
+</div>
+<!-- end aa sec -->
+
+<div id="aa_particles"></div>
+<script src="ressources/js/particle.js"></script>
+<script type="text/javascript">
+    particlesJS("aa_particles", {"particles":{"number":{"value":60,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.25,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.3,"width":1},"move":{"enable":true,"speed":3,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+</script>
+<!-- end style particle -->
+
+<!-- start modal why? -->
+<div id="why" class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="container-fluid">
+                <section class="container-fluid">
+                    <div class="modal-header">
+                       <h3><span class="glyphicon glyphicon-question-sign"></span> Pourquoi s'inscrire ? </h3>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                    </div>
+                    <div class="modal-body">
+                        Afin de gérer au mieux le transfert d'information nous vous invitons à vous créer un compte. <br><br>
+                        Cela permet également de rendre nos transaction plus simple ainsi que nos démarche informative et de SAV
+                        <br>
+                        <br>
+                        <br>
+                            Dans un soucis de qualité de service, nous vous prions de bien vouloir renseigner vos informations personnelles.
+                        <br>
+                            Nous certifions sur l'honneur de ne pas divulguer et/ou vendre vos informations personnel à un tierce
+                    </div>
+                    <div></div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end modal why? -->
+
+
+
+<!--modal form-->
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Création de compte</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <form action="#" method="post" name="enregistration_compte" id="enregistration_compte">
+                        <!-- row -->
+                        <div class="row">
+                            <div class="col">
+                                <!-- input nom -->
+                                <div class="form-group">
+                                    <label><span class="fa fa-user"></span> Nom : </label>
+                                    <input type="text" name="nom" class="form-control" id="nom" placeholder="Votre nom.." maxlength="15" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- input prenom -->
+                                <div class="form-group">
+                                    <label><span class="fa fa-user"></span> Prenom : </label>
+                                    <input type="text" name="prenom" class="form-control" id="prenom" placeholder="Votre prénom.." maxlength="15" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- input username -->
+                                <div class="form-group">
+                                    <label><span class="fa fa-user"></span> Pseudo :</label>
+                                    <input type="text" name="pseudo" class="form-control" id="pseudo" placeholder="Un pseudo.." maxlength="20" required>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="row">
+                            <div class="col">
+                                <!-- input password -->
+                                <div class="form-group">
+                                    <label><span class="fa fa-lock"></span> Mot de passe :</label>
+                                    <input type="password" name="pass" class="form-control" id="pass" placeholder="Mot de passe.." maxlength="30" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- input confirm pass -->
+                                <div class="form-group">
+                                    <label><span class="fa fa-lock"></span> Confirmation :</label>
+                                    <input type="password" name="confirmPass" class="form-control" id="confirmPass" placeholder="Confirmation mdp.." maxlength="30" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- input tel -->
+                                <div class="form-group">
+                                    <label><span class="fa fa-phone"></span> N° telephone : </label>
+                                    <input type="text" name="tel" class="form-control" id="tel" placeholder="06xxxxxxxx" maxlength="10" required>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- input mail -->
+                        <div class="form-group">
+                            <label><span class="fa fa-envelope"></span> E-mail : </label>
+                            <input type="email" name="mail" class="form-control" id="mail" placeholder="Exemple@free.fr" maxlength="35" required>
+                        </div>
+                    <button type="submit" class="btn btn-info pull-right">Créer le compte <span class="fa fa-arrow-right"></span></button>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- end modal form-->
+</body>
+</html>
