@@ -55,8 +55,8 @@ else
          * L'utilisateur souhaite se faire une action sur son profil.
          */
         case "compte":
-            include("model/compteModel.php");
-            include("controler/compteControler.php");
+            include("model/CompteModel.php");
+            include("controler/CompteControler.php");
             switch ($ac)
             {
                 /**
@@ -76,7 +76,7 @@ else
          * L'utilisateur souhaite faire une action dans le marché.
          */
         case "annonces":
-            include("model/marketModel.php");
+            include("model/MarketModel.php");
             include("controler/annonceControler.php");
             switch ($ac)
             {
@@ -97,7 +97,7 @@ else
          * L'utilisateur souhaite faire une action sur les pokémons.
          */
         case "pokemon":
-            include("model/pokemonModel.php");
+            include("model/PokemonModel.php");
             include("controler/pokemonControler.php");
             switch ($ac)
             {
@@ -117,7 +117,7 @@ else
          * L'utilisateur souhaite mener bataille.
          */
         case "combat":
-            include("model/entrainementModel.php");
+            include("model/EntrainementModel.php");
             include("controler/entrainementControler.php");
             include("views/combat/courbe_experience.php");
             switch ($ac)

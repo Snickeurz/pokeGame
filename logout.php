@@ -6,6 +6,10 @@
  * Time: 14:39
  */
 
+/**
+ * Méthode utilitaire pour la déconnexion.
+ * Détruit la session et redirige l'utilisateur.
+ */
 function logOut()
 {
     session_destroy();

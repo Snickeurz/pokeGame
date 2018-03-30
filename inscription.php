@@ -3,12 +3,12 @@
 /**
  * Récupération des champs du formulaire.
  */
-$nom = $_POST["nom"];
-$prenom = $_POST["prenom"];
-$pseudo = $_POST["pseudo"];
-$tel = $_POST["tel"];
-$email = $_POST["emailNewCompte"];
-$pass = $_POST["pass"];
+$nom = $_POST["nom"]; // Le nom de famille.
+$prenom = $_POST["prenom"]; // Le prénom.
+$pseudo = $_POST["pseudo"]; // Le pseudo in game.
+$tel = $_POST["tel"]; // Le numéro de tél.
+$email = $_POST["emailNewCompte"]; // L'adresse email associé au compte.
+$pass = $_POST["pass"]; // Le mot de passe du compte.
 /**
  * Persistance des données.
  */
