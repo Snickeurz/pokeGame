@@ -17,6 +17,10 @@ else
 
     switch ($uc)
     {
+        case "accueil":
+            include("views/home.html");
+            break;
+
         case "compte":
             include("model/compteModel.php");
             include("controler/compteControler.php");
@@ -68,8 +72,12 @@ else
                     break;
             }
             break;
-
+        case "logout":
+            include("logout.php");
+            logOut();
+            break;
         default:
+            include("views/home.html");
             break;
     }
 

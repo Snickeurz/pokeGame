@@ -6,6 +6,14 @@
                 <div class="btn-group btn-group-justified">
                     <!-- bouton group for nouveautées -->
                     <div class="btn-group">
+                        <button type="button" class="btn btn-nav" onclick="format('accueil','show');">
+                            <span class="fa fa-home"></span>
+                            <!-- onglet titre -->
+                            <p>Accueil</p>
+                        </button>
+                    </div>
+                    <!-- bouton group for nouveautées -->
+                    <div class="btn-group">
                         <button type="button" class="btn btn-nav" onclick="format('compte','show');">
                             <span class="fa fa-user"></span>
                             <!-- onglet titre -->
@@ -75,17 +83,20 @@
         var toactivate="";
         //alert(etat);
         switch(etat) {
-            case 'annonces' :
-                    toactivate=1;
+            case 'compte':
+                toactivate=1;
                 break;
-            case 'pokemon':
+            case 'annonces' :
                     toactivate=2;
                 break;
-            case 'combat':
+            case 'pokemon':
                     toactivate=3;
                 break;
-            case 'aide':
+            case 'combat':
                     toactivate=4;
+                break;
+            case 'aide':
+                    toactivate=5;
                 break;
             default:
                   toactivate=0;
