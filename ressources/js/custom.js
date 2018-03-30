@@ -3,15 +3,36 @@
  */
 $(function() {
     /**
-     *
-     * Cacher le slider principal sauf pour certaines pages
+     * Pour loginInterface.html
      */
     var inscription = getUrlParameter('compte');
     if(inscription="created"&&inscription!=null)
     {
+        /**
+         * Enlèvement de la classe hide à la div succes_creation_compte.
+         */
         $("#succes_creation_compte").removeClass("hide");
+        /**
+         * On ajoute la classe show à la div succes_creation_compte.
+         */
         $("#succes_creation_compte").addClass("show");
     }
+    /**
+     * Pour loginInterface.html
+     */
+    var failed = getUrlParameter('session');
+    if(failed="failed"&&failed!=null)
+    {
+        /**
+         * Enlèvement de la classe hide à la div fail_creation_compte.
+         */
+        $("#fail_creation_compte").removeClass("hide");
+        /**
+         * On ajoute la classe show à la div fail_creation_compte.
+         */
+        $("#fail_creation_compte").addClass("show");
+    }
+
 });
 
 /**

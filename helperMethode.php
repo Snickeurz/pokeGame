@@ -6,6 +6,11 @@
  * Time: 21:37
  */
 
+/**
+ * Méthode utilitaire pour récupérer le paramètre ac de l'url.
+ *
+ * @return string la valeur de l'ac récupéré
+ */
 function getAc()
 {
     $ac = "";
@@ -15,6 +20,12 @@ function getAc()
     }
     return $ac;
 }
+
+/**
+ * Méthode utilitaire pour récupérer le paramètre uc de l'url.
+ *
+ * @return string la valeur de l'uc récupéré
+ */
 function getUc()
 {
     $uc = "";

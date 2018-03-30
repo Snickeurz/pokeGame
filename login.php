@@ -6,33 +6,50 @@
  * Time: 22:41
  */
 
+/**
+ * PDO.
+ */
 include("model/class.pdo.inc.php");
+/**
+ * Méthodes static pour la gestion du log.
+ */
 include("model/loginModel.php");
 
+/**
+ * On vérifie les variables de type POST reçu ainsi que l'action à faire.
+ */
 if(isset($_POST["email"])&!empty($_POST["email"])&isset($_POST["password"])&!empty($_POST["password"])&isset($_POST["connexion"]))
 {
+    /**
+     * Vérification des variables fournit.
+     */
     if(loginModel::checkUser($_POST["email"], $_POST["password"]))
     {
+        /**
+         * Initialise session.
+         */
         session_start();
+        /**
+         * Affectation @bool = true à la variable de session __valide.
+         */
         $_SESSION["__valide"] = true;
+        /**
+         * Rediriger l'utlisateur vers index.php.
+         */
         echo '<script>window.location.replace("./index.php");</script>';
     }
 }
+/**
+ * L'utilisateur souhaite se créer un compte.
+ */
 elseif(isset($_POST["create_account"]))
 {
-    $nom = $_POST["nom"];
-    $prenom = $_POST["prenom"];
-    $pseudo = $_POST["pseudo"];
-    $tel = $_POST["tel"];
-    $email = $_POST["emailNewCompte"];
-    $pass = $_POST["pass"];
-
-    if(loginModel::inscription($nom, $prenom, $pseudo, $tel, $email, $pass))
-    {
-        echo '<script>window.location.replace("./index.php?compte=created");</script>';
-    }
+    include("inscription.php");
 }
 else
 {
-    echo '<script>window.location.replace("./index.php?session=failed&reason=bad_auth");</script>';
+    /**
+     * Redirige l'utilisateur vers index.php et doit afficher un message d'erreur.
+     */
+    echo '<script>window.location.replace("./index.php?session=failed");</script>';
 }

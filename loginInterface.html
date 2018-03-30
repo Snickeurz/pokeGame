@@ -1,7 +1,14 @@
 <body>
 <!-- si lutilisateur vient de se créer un compte & que c'est réussis, afficher ce qui suit : -->
-<div class="alert alert-info alert-dismissible fade hide info_login_creation_compte" role="alert" id="succes_creation_compte">
+<div class="alert alert-info alert-dismissible fade hide " role="alert" id="succes_creation_compte">
     <strong>Votre compte a été crée avec succès :</strong> Vous pouvez dès à présent vous connecter.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<!-- si lutilisateur vient de se créer un compte & que ca fail, afficher ce qui suit : -->
+<div class="alert alert-danger alert-dismissible fade hide " role="alert" id="fail_creation_compte">
+    <strong>Votre compte n'a pas pu être crée :</strong> Une erreur est survenue. Merci de revenir plus tard.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
