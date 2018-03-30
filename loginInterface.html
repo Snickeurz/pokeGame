@@ -1,22 +1,17 @@
-
 <body>
+<!-- si lutilisateur vient de se créer un compte & que c'est réussis, afficher ce qui suit : -->
+<div class="alert alert-info alert-dismissible fade hide info_login_creation_compte" role="alert" id="succes_creation_compte">
+    <strong>Votre compte a été crée avec succès :</strong> Vous pouvez dès à présent vous connecter.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 
 <!-- titre loginInterface.html-->=
     <div class="text-center titre_login">
         <h2>POKEGAME - V 1.0</h2>
     </div>
 
-<!-- si lutilisateur vient de se créer un compte & que c'est réussis, afficher ce qui suit : -->
-
-    <div class="container hide" id="succes_creation_compte">
-
-        <div class="alert alert-info">
-            <strong>Votre compte a été crée avec succès :</strong> Vous pouvez dès à présent vous connecter.
-            <button type="button pull-right" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    </div>
 
 <!-- start aa sec -->
 <div class="aa_sec">
@@ -42,8 +37,9 @@
                         <input type="password" id="password" name="password" class="form-control" placeholder="Password.." required>
                         <!-- end pass group -->
                         <!-- go -->
-                        <button class="btn btn-lg btn-success btn-block btn-signin" type="submit">Connexion <span class="fa fa-arrow-right"></span></button>
+                        <input class="btn btn-lg btn-success btn-block btn-signin" value="Se connecter" name="connexion" id="connexion" type="submit" />
                     </form>
+                    <hr>
                     <!-- /form -->
                     <button class="btn btn-lg btn-info btn-block  btn-signin" data-toggle="modal" data-target=".bd-example-modal-lg">Inscription <span class="fa fa-edit"></span></button>
                     <br>
@@ -116,7 +112,7 @@
 
             <div class="modal-body">
 
-                <form action="#" method="post" name="enregistration_compte" id="enregistration_compte">
+                <form action="login.php" method="post" name="enregistration_compte" id="enregistration_compte">
                         <!-- row -->
                         <div class="row">
                             <div class="col">
@@ -168,9 +164,9 @@
                         <!-- input mail -->
                         <div class="form-group">
                             <label><span class="fa fa-envelope"></span> E-mail : </label>
-                            <input type="email" name="mail" class="form-control" id="mail" placeholder="Exemple@free.fr" maxlength="35" required>
+                            <input type="email" name="emailNewCompte" class="form-control" id="emailNewCompte" placeholder="Exemple@free.fr" maxlength="35" required>
                         </div>
-                    <button type="submit" class="btn btn-info pull-right">Créer le compte <span class="fa fa-arrow-right"></span></button>
+                    <input type="submit" class="btn btn-info pull-right" value="Creer le compte" name="create_account" id="create_account"/>
                 </form>
 
 
