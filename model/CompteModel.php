@@ -57,7 +57,6 @@ class CompteModel
         $this->arrayPokemon = array();
     }
 
-
     /**
      * Serialize la class compte.
      * Renvoie un serialise sur ID, Level, Solde & Pseudo.
