@@ -16,7 +16,7 @@ function getAc()
     $ac = "";
     if(isset($_GET["ac"])&&!empty($_GET["ac"]))
     {
-        $uc = $_GET["ac"];
+        $ac = $_GET["ac"];
     }
     return $ac;
 }

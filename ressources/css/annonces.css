@@ -1,0 +1,20 @@
+.annonce_titre
+{
+    color: #0c5460;
+}
+.nom_pokemon_annonce
+{
+    color: #856404;
+    font-size: 40px;
+}
+
+.description_annonce
+{
+    font-size:15px;
+    color: #171a1d;
+}
+.prix_annonce
+{
+    font-size: 25px;
+    color: firebrick;
+}
