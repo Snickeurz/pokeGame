@@ -1,12 +1,12 @@
 <hr>
-<div class="row">
+<div class="row full-width">
     <div class="col bg-annonce">
     </div>
     <div class="col col-7">
         <div class='container bg-white'>
             <div class='row'>
                 <div class='col'>
-                    <h3 class="font-weight-bold text-center annonce_titre">ANNONCE #1</h3>
+                    <h3 class="font-weight-bold text-center annonce_titre">ANNONCE #1 - VENDU PAR : MUICSE</h3>
                     <hr>
                     <div class="row">
                         <div class="col">

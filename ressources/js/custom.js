@@ -32,6 +32,21 @@ $(function() {
          */
         $("#fail_creation_compte").addClass("show");
     }
+    /**
+     * Pour loginInterface.html
+     */
+    var login = getUrlParameter('login');
+    if(login="fail"&&login!=null)
+    {
+        /**
+         * Enlèvement de la classe hide à la div fail_login
+         */
+        $("#fail_login").removeClass("hide");
+        /**
+         * On ajoute la classe show à la div fail_login.
+         */
+        $("#fail_login").addClass("show");
+    }
 
 });
 

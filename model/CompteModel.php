@@ -13,39 +13,43 @@ class CompteModel
      */
     protected $id;
     /**
-     * @var $nom le nom de l'utilisateur.
+     * @var $nom string le nom de l'utilisateur.
      */
     protected $nom;
     /**
-     * @var $prenom le prénom de l'utilisateur
+     * @var $prenom string prénom de l'utilisateur.
      */
     protected $prenom;
     /**
-     * @var l'adresse email de l'utilisateur
+     * @var $mail stringl'adresse email de l'utilisateur.
      */
     protected $mail;
     /**
-     * @var le mot de pass de l'utilisateur
+     * @var $telephone string Le numéro de telephone de l'utilsiateur.
+     */
+    protected $telephone;
+    /**
+     * @var $password string le mot de pass de l'utilisateur.
      */
     protected $password;
     /**
-     * @var $solde le solde de l'utilisateur.
+     * @var $solde int le solde de l'utilisateur.
      */
     protected $solde;
     /**
-     * @var $level le niveau de l'utilisateur.
+     * @var $level int le niveau de l'utilisateur.
      */
     protected $level;
     /**
-     * @var $experience l'experience nécessaire.
+     * @var $experience int l'experience nécessaire.
      */
     protected $experience;
     /**
-     * @var $pseudo le pseudo de l'utlisateur.
+     * @var $pseudo string le pseudo de l'utlisateur.
      */
     protected $pseudo;
     /**
-     * @var $arrayPokemon Array de pokemon.
+     * @var $arrayPokemon array de pokemon.
      */
     protected $arrayPokemon;
     /**
@@ -67,6 +71,10 @@ class CompteModel
             $this->getId(),
             $this->getLevel(),
             $this->getSolde(),
+            $this->getPseudo(),
+            $this->getNom(),
+            $this->getPrenom(),
+            $this->get(),
             $this->getPseudo()
         ));
     }
@@ -245,6 +253,23 @@ class CompteModel
     {
         $this->experience = $experience;
     }
+
+    /**
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * @param string $telephone
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+    }
+
 
 
 }
