@@ -84,7 +84,10 @@ else
                  * L'utilisateur souhaite afficher les annonces.
                  */
                 case "show":
-                    include("views/market/marketPlace.html");
+                    include("views/market/annonces.php");
+                    break;
+                case "detail":
+                    include("views/market/detailAnnonce.php");
                     break;
                 /**
                  * Par défaut on effectue aucune action.
