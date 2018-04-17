@@ -6,6 +6,8 @@
  * Time: 22:24
  */
 
+namespace collection;
+
 class CompteModel
 {
     /**
