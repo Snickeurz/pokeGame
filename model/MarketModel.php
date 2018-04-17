@@ -10,27 +10,27 @@
 class MarketModel
 {
     /**
-     * @var $idAnnonce int l'id de l'annonce
+     * @var int $idAnnonce l'id de l'annonce
      */
     protected $idAnnonce;
     /**
-     * @var $vendeur string le nom du vendeur
+     * @var string $vendeur le nom du vendeur
      */
     protected $vendeur;
     /**
-     * @var $pokemon string le nom du pokemon à vendre
+     * @var string $pokemon le nom du pokemon à vendre
      */
     protected $pokemon;
     /**
-     * @var $prix int le prix du pokemon a vendre
+     * @var int $prix le prix du pokemon a vendre
      */
     protected $prix;
     /**
-     * @var $description string la description de l'annonce
+     * @var string $description la description de l'annonce
      */
     protected $description;
     /**
-     * @var $date DateTime la date de l'annonce
+     * @var dateTime $date la date de l'annonce
      */
     protected $date;
 

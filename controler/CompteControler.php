@@ -25,5 +25,9 @@ class CompteControler
         return $updateXP->execute();
     }
 
+    public function getAllFromBDD($mail)
+    {
+
+    }
 
 }

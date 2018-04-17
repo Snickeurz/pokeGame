@@ -15,39 +15,43 @@ class CompteModel
      */
     protected $id;
     /**
-     * @var $nom le nom de l'utilisateur.
+     * @var string $nom le nom de l'utilisateur.
      */
     protected $nom;
     /**
-     * @var $prenom le prénom de l'utilisateur
+     * @var string $prenom le prénom de l'utilisateur.
      */
     protected $prenom;
     /**
-     * @var l'adresse email de l'utilisateur
+     * @var string $mail l'adresse email de l'utilisateur.
      */
     protected $mail;
     /**
-     * @var le mot de pass de l'utilisateur
+     * @var string $telephone Le numéro de telephone de l'utilsiateur.
+     */
+    protected $telephone;
+    /**
+     * @var string $password le mot de pass de l'utilisateur.
      */
     protected $password;
     /**
-     * @var $solde le solde de l'utilisateur.
+     * @var int $solde le solde de l'utilisateur.
      */
     protected $solde;
     /**
-     * @var $level le niveau de l'utilisateur.
+     * @var $level int le niveau de l'utilisateur.
      */
     protected $level;
     /**
-     * @var $experience l'experience nécessaire.
+     * @var int $experience l'experience nécessaire.
      */
     protected $experience;
     /**
-     * @var $pseudo le pseudo de l'utlisateur.
+     * @var string $pseudo le pseudo de l'utlisateur.
      */
     protected $pseudo;
     /**
-     * @var $arrayPokemon Array de pokemon.
+     * @var array $arrayPokemon la liste des pokémons possédé.
      */
     protected $arrayPokemon;
     /**
@@ -59,7 +63,6 @@ class CompteModel
         $this->arrayPokemon = array();
     }
 
-
     /**
      * Serialize la class compte.
      * Renvoie un serialise sur ID, Level, Solde & Pseudo.
@@ -70,6 +73,10 @@ class CompteModel
             $this->getId(),
             $this->getLevel(),
             $this->getSolde(),
+            $this->getPseudo(),
+            $this->getNom(),
+            $this->getPrenom(),
+            $this->get(),
             $this->getPseudo()
         ));
     }
@@ -90,7 +97,7 @@ class CompteModel
      ************************************************************************************/
 
     /**
-     * @return mixed
+     * @return int $this->id
      */
     public function getId()
     {
@@ -98,7 +105,7 @@ class CompteModel
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -106,7 +113,7 @@ class CompteModel
     }
 
     /**
-     * @return le
+     * @return string $this->nom
      */
     public function getNom()
     {
@@ -114,7 +121,7 @@ class CompteModel
     }
 
     /**
-     * @param le $nom
+     * @param string $nom
      */
     public function setNom($nom)
     {
@@ -122,7 +129,7 @@ class CompteModel
     }
 
     /**
-     * @return le
+     * @return string $this->prenom
      */
     public function getPrenom()
     {
@@ -130,7 +137,7 @@ class CompteModel
     }
 
     /**
-     * @param le $prenom
+     * @param string $prenom
      */
     public function setPrenom($prenom)
     {
@@ -138,7 +145,7 @@ class CompteModel
     }
 
     /**
-     * @return mixed
+     * @return string $this->mail
      */
     public function getMail()
     {
@@ -146,7 +153,7 @@ class CompteModel
     }
 
     /**
-     * @param mixed $mail
+     * @param string $mail
      */
     public function setMail($mail)
     {
@@ -154,7 +161,7 @@ class CompteModel
     }
 
     /**
-     * @return le
+     * @return string $this->password
      */
     public function getPassword()
     {
@@ -162,7 +169,7 @@ class CompteModel
     }
 
     /**
-     * @param le $password
+     * @param string $password
      */
     public function setPassword($password)
     {
@@ -170,7 +177,7 @@ class CompteModel
     }
 
     /**
-     * @return le
+     * @return int $this->solde
      */
     public function getSolde()
     {
@@ -178,7 +185,7 @@ class CompteModel
     }
 
     /**
-     * @param le $solde
+     * @param int $solde
      */
     public function setSolde($solde)
     {
@@ -186,7 +193,7 @@ class CompteModel
     }
 
     /**
-     * @return le
+     * @return int $this->level
      */
     public function getLevel()
     {
@@ -194,7 +201,7 @@ class CompteModel
     }
 
     /**
-     * @param le $level
+     * @param int $level
      */
     public function setLevel($level)
     {
@@ -202,7 +209,7 @@ class CompteModel
     }
 
     /**
-     * @return le
+     * @return string $this->pseudo
      */
     public function getPseudo()
     {
@@ -210,7 +217,7 @@ class CompteModel
     }
 
     /**
-     * @param le $pseudo
+     * @param string $pseudo
      */
     public function setPseudo($pseudo)
     {
@@ -234,7 +241,7 @@ class CompteModel
     }
 
     /**
-     * @return mixed
+     * @return int $this->experience
      */
     public function getExperience()
     {
@@ -242,12 +249,29 @@ class CompteModel
     }
 
     /**
-     * @param mixed $experience
+     * @param int $experience
      */
     public function setExperience($experience)
     {
         $this->experience = $experience;
     }
+
+    /**
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * @param string $telephone
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+    }
+
 
 
 }

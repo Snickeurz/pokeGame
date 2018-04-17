@@ -38,6 +38,10 @@ if(isset($_POST["email"])&!empty($_POST["email"])&isset($_POST["password"])&!emp
          */
         echo '<script>window.location.replace("./index.php");</script>';
     }
+    else
+    {
+        echo '<script>window.location.replace("./index.php?login=fail");</script>';
+    }
 }
 /**
  * L'utilisateur souhaite se créer un compte.
@@ -51,5 +55,4 @@ else
     /**
      * Redirige l'utilisateur vers index.php et doit afficher un message d'erreur.
      */
-    echo '<script>window.location.replace("./index.php?session=failed");</script>';
 }

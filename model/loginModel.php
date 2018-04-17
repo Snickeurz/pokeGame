@@ -5,8 +5,8 @@ class loginModel
     /**
      * Méthode utilitaire pour vérifier l'authentification.
      *
-     * @param $mail l'adresse email du formulaire de connexion.
-     * @param $pass le mot de passe du formulaire de connexion.
+     * @param string $mail l'adresse email du formulaire de connexion.
+     * @param string $pass le mot de passe du formulaire de connexion.
      * @return mixed le résultat trouvé.
      */
     public static function checkUser($mail, $pass)
@@ -22,12 +22,12 @@ class loginModel
     /**
      * Méthode utilitaire pour une nouvelle inscription.
      *
-     * @param $nom le nom de l'utilisateur.
-     * @param $prenom le prénom de l'utilisateur.
-     * @param $pseudo le pseudo de l'utilisateur.
-     * @param $tel le numéro de téléphone fournit.
-     * @param $email l'adresse email.
-     * @param $pass le mot de passe.
+     * @param string $nom le nom de l'utilisateur.
+     * @param string $prenom le prénom de l'utilisateur.
+     * @param string $pseudo le pseudo de l'utilisateur.
+     * @param string $tel le numéro de téléphone fournit.
+     * @param string $email l'adresse email.
+     * @param string $pass le mot de passe.
      * @return mixed L'état de l'insertion.
      */
     public static function inscription($nom, $prenom, $pseudo, $tel, $email, $pass)

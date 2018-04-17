@@ -7,45 +7,46 @@
 class PokemonModel
 {
     /**
-     * @var $id l'id du pokemon.
+     * @var int $id l'id du pokemon.
      */
     protected $id;
     /**
-     * @var $espece l'espece du pokemon.
+     * @var string $espece l'espece du pokemon.
      */
     protected $espece;
     /**
-     * @var le level du pokemon.
+     * @var int $level le level du pokemon.
      */
     protected $level;
     /**
-     * @var $experience l'experience nécessaire pour le prochain level.
+     * @var int $experience l'experience nécessaire pour le prochain level.
      */
     protected $experience;
     /**
-     * @var $type1 l'élement 1 du pokémon.
+     * @var int $type1 l'élement 1 du pokémon.
      */
     protected $type1;
     /**
-     * @var $type2 l'élement 2 du pokémon.
+     * @var int $type2 l'élement 2 du pokémon.
      */
     protected $type2;
     /**
-     * @var $sexe Le sexe du pokémon.
+     * @var boolean $sexe Le sexe du pokémon.
      */
     protected $sexe;
     /**
-     * @var $prixVente Le prix de vente du pokémon.
+     * @var int $prixVente Le prix de vente du pokémon.
      */
     protected $prixVente;
     /**
-     * @var la vie du pokemon.
+     * @var int $vie
+     * la vie du pokemon.
      */
     protected $vie;
 
 
     /**
-     * compteModel constructor.
+     * PokemonModel's constructor.
      */
     public function __construct()
     {
@@ -98,7 +99,7 @@ class PokemonModel
     }
 
     /**
-     * @return le
+     * @return int $this->level
      */
     public function getLevel()
     {
@@ -106,7 +107,7 @@ class PokemonModel
     }
 
     /**
-     * @param le $level
+     * @param int $level
      */
     public function setLevel($level)
     {
@@ -114,7 +115,7 @@ class PokemonModel
     }
 
     /**
-     * @return mixed
+     * @return int $this->experience
      */
     public function getExperience()
     {
@@ -122,7 +123,7 @@ class PokemonModel
     }
 
     /**
-     * @param mixed $experience
+     * @param int $experience
      */
     public function setExperience($experience)
     {
@@ -130,7 +131,7 @@ class PokemonModel
     }
 
     /**
-     * @return mixed
+     * @return int $this->type1
      */
     public function getType1()
     {
@@ -138,7 +139,7 @@ class PokemonModel
     }
 
     /**
-     * @param mixed $type1
+     * @param int $type1
      */
     public function setType1($type1)
     {
@@ -162,7 +163,7 @@ class PokemonModel
     }
 
     /**
-     * @return Le
+     * @return boolean
      */
     public function getSexe()
     {
@@ -170,7 +171,7 @@ class PokemonModel
     }
 
     /**
-     * @param Le $sexe
+     * @param boolean $sexe
      */
     public function setSexe($sexe)
     {
@@ -178,7 +179,7 @@ class PokemonModel
     }
 
     /**
-     * @return Le
+     * @return int $this->prixVente
      */
     public function getPrixVente()
     {
@@ -186,7 +187,7 @@ class PokemonModel
     }
 
     /**
-     * @param Le $prixVente
+     * @param int $prixVente
      */
     public function setPrixVente($prixVente)
     {
@@ -194,7 +195,7 @@ class PokemonModel
     }
 
     /**
-     * @return la
+     * @return int $this->vie
      */
     public function getVie()
     {
@@ -202,7 +203,7 @@ class PokemonModel
     }
 
     /**
-     * @param la $vie
+     * @param int $vie
      */
     public function setVie($vie)
     {
@@ -210,4 +211,3 @@ class PokemonModel
     }
 
 }
-?>

@@ -64,6 +64,7 @@ else
                  */
                 case "show":
                     include("views/dresseur/profil.html");
+                    include("views/dresseur/modalChangePassword.html");
                     break;
                 /**
                  * Par défaut on effectue aucune action.
