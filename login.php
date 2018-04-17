@@ -23,7 +23,9 @@ if(isset($_POST["email"])&!empty($_POST["email"])&isset($_POST["password"])&!emp
     /**
      * Vérification des variables fournit.
      */
-    if(loginModel::checkUser($_POST["email"], $_POST["password"]))
+    $id = null;
+    $id = loginModel::checkUser($_POST["email"], $_POST["password"]);
+    if($id != null)
     {
         /**
          * Initialise session.
@@ -33,6 +35,7 @@ if(isset($_POST["email"])&!empty($_POST["email"])&isset($_POST["password"])&!emp
          * Affectation @bool = true à la variable de session __valide.
          */
         $_SESSION["__valide"] = true;
+        $_SESSION["id"] = $id;
         /**
          * Rediriger l'utlisateur vers index.php.
          */

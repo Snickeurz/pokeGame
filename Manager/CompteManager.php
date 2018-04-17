@@ -15,14 +15,21 @@ class compteManager
         $monPdo = MonPdo::getInstance();
         $compte = null;
 
-        $informations = $monPdo->prepare("SELECT * FROM users WHERE id = :id");
-        $informations->bindParam(":id", $id, PDO::PARAM_INT);
-        $informations->execute();
-        $informations->fetchAll();
-
-        foreach ($informations as $information)
+        try
         {
-            $compte = new CompteModel();
+            $informations = $monPdo->prepare("SELECT * FROM users WHERE id = :id");
+            $informations->bindParam(":id", $id, PDO::PARAM_INT);
+            $informations->execute();
+            $informations->fetchAll();
+
+            foreach ($informations as $information)
+            {
+                $compte = new CompteModel();
+            }
+        }
+        catch (\Exception $e)
+        {
+            $e->getMessage();
         }
         return $compte;
     }
@@ -51,6 +58,23 @@ class compteManager
         }
 
         return $collectionPokemon;
+    }
+
+    /**
+     * Met à jour l'xp du compte.
+     *
+     * @param $xp
+     * @return mixed
+     */
+    public function gainExp($xp)
+    {
+        $compte = new CompteModel();
+        $monPdo = MonPdo::getInstance();
+
+        $compte->setExperience($xp);
+        $updateXP = $monPdo->prepare("UPDATE users SET xp = :xp");
+        $updateXP->bindParam(":xp", $xp);
+        return $updateXP->execute();
     }
 
 

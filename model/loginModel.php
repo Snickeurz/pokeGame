@@ -12,11 +12,11 @@ class loginModel
     public static function checkUser($mail, $pass)
     {
         $monPdo = MonPdo::getInstance();
-        $check = $monPdo->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+        $check = $monPdo->prepare("SELECT id FROM users WHERE email = :email AND password = :password");
         $check->bindParam(":email",$mail,PDO::PARAM_STR);
         $check->bindParam(":password",$pass,PDO::PARAM_STR);
         $check->execute();
-        return $check->fetch();
+        return $check->fetchColumn();
     }
 
     /**

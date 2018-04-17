@@ -3,6 +3,7 @@
 session_start();
 /**
  * Inclusion de méthodes utilitaires :
+ * Notamment la récupération des paramètres uc & ac.
  */
 include("helperMethode.php");
 /**
@@ -56,6 +57,7 @@ else
          */
         case "compte":
             include("model/CompteModel.php");
+            include("manager/CompteManager.php");
             include("controler/CompteControler.php");
             switch ($ac)
             {
@@ -161,4 +163,3 @@ else
      */
     include("footer.html");
 }
-?>
