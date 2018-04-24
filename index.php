@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * PDO.
+ */
+include("model/class.pdo.inc.php");
+
 session_start();
 /**
  * Inclusion de méthodes utilitaires :
@@ -79,8 +84,10 @@ else
          * L'utilisateur souhaite faire une action dans le marché.
          */
         case "annonces":
+            include ("model/collection/Collection.php");
             include("model/MarketModel.php");
-            include("controler/annonceControler.php");
+            include("Manager/AnnoncesManager.php");
+            include("controler/AnnonceControler.php");
             switch ($ac)
             {
                 /**
@@ -120,11 +127,11 @@ else
             }
             break;
         /**
-         * L'utilisateur souhaite mener bataille.
+         * L'utilisateur souhaite partir en croisade.
          */
         case "combat":
             include("model/EntrainementModel.php");
-            include("controler/entrainementControler.php");
+            include("controler/EntrainementControler.php");
             include("views/combat/courbe_experience.php");
             switch ($ac)
             {

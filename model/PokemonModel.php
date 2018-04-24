@@ -67,7 +67,7 @@ class PokemonModel
      **************************************************/
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -75,7 +75,7 @@ class PokemonModel
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -83,7 +83,7 @@ class PokemonModel
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEspece()
     {
@@ -91,7 +91,7 @@ class PokemonModel
     }
 
     /**
-     * @param mixed $espece
+     * @param string $espece
      */
     public function setEspece($espece)
     {

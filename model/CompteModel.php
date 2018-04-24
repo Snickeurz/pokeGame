@@ -6,7 +6,6 @@
  * Time: 22:24
  */
 
-namespace collection;
 
 class CompteModel
 {
@@ -54,6 +53,7 @@ class CompteModel
      * @var array $arrayPokemon la liste des pokémons possédé.
      */
     protected $arrayPokemon;
+
     /**
      * compteModel constructor.
      */

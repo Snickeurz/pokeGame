@@ -8,6 +8,4 @@
 
 
 $compte = null;
-$compte = \collection\compteManager::constructCompteFromDB($_SESSION["id"]);
-
-var_dump($compte);
+$compte = compteManager::constructCompteFromDB($_SESSION["id"]);

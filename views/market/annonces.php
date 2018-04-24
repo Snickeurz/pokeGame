@@ -1,4 +1,10 @@
 <hr>
+<?php
+
+for($i=0; $i<$collection->getSize();$i++)
+{
+
+?>
 <div class="row full-width">
     <div class="col bg-annonce">
     </div>
@@ -6,7 +12,12 @@
         <div class='container bg-white'>
             <div class='row'>
                 <div class='col'>
-                    <h3 class="font-weight-bold text-center annonce_titre">ANNONCE #1 - VENDU PAR : MUICSE</h3>
+                    <h3 class="font-weight-bold text-center annonce_titre">
+                        <?php
+                           echo "ANNONCE".$collection->getObjectAtIndex($i)->getIdAnnonce();
+                           echo "<br>VENDU PAR :".$collection->getObjectAtIndex($i)->getVendeur();
+                        ?>
+                    </h3>
                     <hr>
                     <div class="row">
                         <div class="col">
@@ -14,13 +25,16 @@
                         </div>
                         <div class="col">
                             <p class="nom_pokemon_annonce font-weight-bold text-center">
-                                PISEFSJE
+                                <?php
+                                    echo $collection->getObjectAtIndex($i)->getPokemon();
+                                ?>
                             </p>
                         </div>
                         <div class="col">
                             <p class="description_annonce font-weight-bold">
-                                La légende raconte que.. voilà.
-                                Ce pokémon est à vendre.
+                                <?php
+                                  echo $collection->getObjectAtIndex($i)->getDescription();
+                                ?>
                             </p>
                         </div>
                     </div>
@@ -31,7 +45,9 @@
                     <div class="row">
                         <div class="col">
                             <p class="prix_annonce font-weight-bold text-center">
-                                250
+                                <?php
+                                 echo $collection->getObjectAtIndex($i)->getPrix();
+                                ?>
                             </p>
                         </div>
                         <div class="col">
@@ -51,5 +67,8 @@
     <div class="col bg-annonce">
     </div>
 </div>
-
+<?php
+    echo "<br>";
+}
+?>
 <hr>

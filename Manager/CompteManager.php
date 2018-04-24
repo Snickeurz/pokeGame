@@ -1,6 +1,5 @@
 <?php
 
-namespace collection;
 
 class compteManager
 {
@@ -8,23 +7,27 @@ class compteManager
      * Récupère les informations d'un compte en fonction d'un id.
      *
      * Pour chaque ligne trouvé, instancier un objet de classe MarketModel et le push dans un array de Collection.
-     * @return object une collection de MarketModel.
+     * @param int $id l'id du dresseur à récupérer
+     * @return object $compte un compte
      */
     public static function constructCompteFromDB($id)
     {
         $monPdo = MonPdo::getInstance();
-        $compte = null;
-
+        $compte = new CompteModel();
         try
         {
-            $informations = $monPdo->prepare("SELECT * FROM users WHERE id = :id");
+            $informations = $monPdo->prepare("SELECT id, nom, prenom, pseudo, telephone, email FROM users WHERE id = :id");
             $informations->bindParam(":id", $id, PDO::PARAM_INT);
             $informations->execute();
-            $informations->fetchAll();
 
-            foreach ($informations as $information)
+            while ($info = $informations ->fetch(PDO::FETCH_ASSOC))
             {
-                $compte = new CompteModel();
+                $compte->setId($info["id"]);
+                $compte->setNom($info["nom"]);
+                $compte->setPrenom($info["prenom"]);
+                $compte->setPseudo($info["pseudo"]);
+                $compte->setTelephone($info["telephone"]);
+                $compte->setMail($info["email"]);
             }
         }
         catch (\Exception $e)

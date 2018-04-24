@@ -20,8 +20,13 @@
                                     <div class="col">
 
                                         <select id="selectlieu" name="selectlieu" class="form-control">
-                                            <option value="1">Option one</option>
-                                            <option value="2">Option two</option>
+                                            <option value="">-- Choix du lieux --</option>
+                                            <?php
+                                            foreach($lieux as $lieu)
+                                            {
+                                                echo "<option value='$lieu[0]'>$lieu[1]</option>";
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>

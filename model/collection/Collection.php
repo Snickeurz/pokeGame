@@ -6,8 +6,7 @@
  * Time: 21:09
  */
 
-namespace collection;
-
+include ("CollectionInterface.php");
 class Collection implements CollectionInterface
 {
     /**
@@ -59,5 +58,9 @@ class Collection implements CollectionInterface
         return array_search($index, $this->collection);
     }
 
+    public function getObjectAtIndex($index)
+    {
+        return $this->collection[$index];
+    }
 
 }

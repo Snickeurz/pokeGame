@@ -17,18 +17,10 @@ class AnnoncesManager
     public static function constructAllAnnoncesFromDB()
     {
         $monPdo = MonPdo::getInstance();
-        $collection = new CollectionAnnonce();
 
         $annonces = $monPdo->prepare("SELECT * FROM annonces");
         $annonces->execute();
-        $annonces->fetchAll();
-
-        foreach ($annonces as $annonce)
-        {
-            $collection->addInCollection(new MarketModel($annonce["id"],$annonce["vendeur"],$annonce["pokemon"],$annonce["prix"],$annonce["description"],$annonce["datePublication"]));
-        }
-
-        return $collection->getCollection();
+        return $annonces->fetchAll();
     }
 
     /**

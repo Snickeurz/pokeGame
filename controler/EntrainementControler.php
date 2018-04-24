@@ -1,0 +1,3 @@
+<?php
+
+$lieux = EntrainementModel::getLieux();

@@ -6,7 +6,6 @@
  * Time: 21:10
  */
 
-namespace collection;
 
 interface CollectionInterface
 {
