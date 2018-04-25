@@ -33,13 +33,14 @@ class loginModel
     public static function inscription($nom, $prenom, $pseudo, $tel, $email, $pass)
     {
         $monPdo = MonPdo::getInstance();
-        $insert = $monPdo->prepare("INSERT INTO users(nom, prenom, pseudo, telephone, email, password) VALUES (:nom, :prenom, :pseudo, :telephone, :email, :password)");
+        $insert = $monPdo->prepare("INSERT INTO users(nom, prenom, pseudo, telephone, email, password, new_user) VALUES (:nom, :prenom, :pseudo, :telephone, :email, :password, :new_user)");
         $insert->bindParam(":nom",$nom,PDO::PARAM_STR);
         $insert->bindParam(":prenom",$prenom,PDO::PARAM_STR);
         $insert->bindParam(":pseudo",$pseudo,PDO::PARAM_STR);
         $insert->bindParam(":telephone",$tel,PDO::PARAM_STR);
         $insert->bindParam(":email",$email,PDO::PARAM_STR);
         $insert->bindParam(":password",$pass,PDO::PARAM_STR);
+        $insert->bindParam(":new_user",true,PDO::PARAM_BOOL);
         return $insert->execute();
     }
 }

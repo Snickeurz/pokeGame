@@ -16,7 +16,7 @@ class compteManager
         $compte = new CompteModel();
         try
         {
-            $informations = $monPdo->prepare("SELECT id, nom, prenom, pseudo, telephone, email FROM users WHERE id = :id");
+            $informations = $monPdo->prepare("SELECT id, nom, prenom, pseudo, telephone, email, xp, lvl, solde FROM users WHERE id = :id");
             $informations->bindParam(":id", $id, PDO::PARAM_INT);
             $informations->execute();
 
@@ -28,6 +28,9 @@ class compteManager
                 $compte->setPseudo($info["pseudo"]);
                 $compte->setTelephone($info["telephone"]);
                 $compte->setMail($info["email"]);
+                $compte->setExperience($info["xp"]);
+                $compte->setLevel($info["lvl"]);
+                $compte->setSolde($info["solde"]);
             }
         }
         catch (\Exception $e)
@@ -80,5 +83,36 @@ class compteManager
         return $updateXP->execute();
     }
 
+    /**
+     * Détermine si nouveau utilisateur.
+     *
+     * @param int $id l'id de l'utilisateur
+     * @return boolean true si premiere connexion sinon false
+     */
+    public static function isNewUser($id)
+    {
+        $monPdo = MonPdo::getInstance();
+        $isNewUser = $monPdo->prepare("SELECT new_user FROM users WHERE id = :id");
+        $isNewUser->bindParam(":id", $id, PDO::PARAM_INT);
+        $isNewUser->execute();
+        return $isNewUser->fetchColumn();
+    }
+
+    /**
+     * Met à jour le starter du dresseur.
+     *
+     * @param int $id id de l'utilisateur
+     * @param string $starter le nom du pokemon choisit en starter
+     * @return mixed
+     */
+    public static function setStarter($id, $starter)
+    {
+        $monPdo = MonPdo::getInstance();
+        $setStarter = $monPdo->prepare("UPDATE users SET starter = :starter, new_user = :new_user WHERE id = :id");
+        $setStarter->bindParam(":starter", $starter, PDO::PARAM_STR);
+        $setStarter->bindParam(":new_user", false, PDO::PARAM_BOOL);
+        $setStarter->bindParam(":id", $id, PDO::PARAM_INT);
+        return $setStarter->execute();
+    }
 
 }

@@ -1,0 +1,90 @@
+
+<!--Nombres de pokemon-->
+<div class="card">
+    <div class="card-header">
+        <span class="fa fa-bookmark"></span> Statistiques - global
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Nombre de pokémons connu : <?php echo $nbPokemons; ?></h5>
+        <p class="card-text">Les noms des 5 derniers pokémons recensé par le pokedex :
+            <br>
+            <br>
+            <span class="font-weight-bold">
+            <?php
+                foreach($last5Pokemons as $unPokemon)
+                {
+                    echo " - ".$unPokemon['nom']."<br>";
+                }
+            ?>
+            </span>
+        </p>
+        <a href="index.php?uc=redirect&ac=liste_pokemon" class="btn btn-primary pull-right">Afficher la liste complète <span class="fa fa-eye"></span> </a>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col">
+        <!--Nombres de pokemon par TYPE-->
+        <div class="card">
+            <div class="card-header">
+                <span class="fa fa-bookmark"></span> Statistiques - Type
+            </div>
+            <div class="card-body">
+
+                <div class="card-text">
+                    <table class="table" id="table_type_pokemons">
+                        <thead>
+                            <tr class="font-weight-bold">
+                                <td>Libelle du type :</td>
+                                <td>Nombre :</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach($allTypes as $type)
+                        {
+                            echo "<tr>";
+                                echo "<td>".$type[1]."</td>";
+                                echo "<td>".PokemonModel::getCountOfSpecifiedType($type[0])."</td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Autre statistique -->
+    <div class="col">
+
+        <div class="card-header">
+            <span class="fa fa-bookmark"></span> Statistiques - Evol' / base
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                <table class="table" id="table_pokemons_evol_base">
+                    <thead>
+                    <tr class="font-weight-bold">
+                        <td>Nombre de pokemon de base : </td>
+                        <td>Nombre de pokemon avec évolution :</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <?php
+                            echo "<td>".$nbBase."</td>";
+                            echo "<td>".$nbEvol."</td>";
+                        ?>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

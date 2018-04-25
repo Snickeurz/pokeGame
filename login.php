@@ -35,12 +35,18 @@ if(isset($_POST["email"])&!empty($_POST["email"])&isset($_POST["password"])&!emp
          * Affectation @bool = true à la variable de session __valide.
          */
         $_SESSION["__valide"] = true;
+        /**
+         * Paramètre un id de session
+         */
         $_SESSION["id"] = $id;
         /**
          * Rediriger l'utlisateur vers index.php.
          */
         echo '<script>window.location.replace("./index.php");</script>';
     }
+    /**
+     * Redirige l'utilisateur vers index.php et doit afficher un message d'erreur.
+     */
     else
     {
         echo '<script>window.location.replace("./index.php?login=fail");</script>';
@@ -55,7 +61,5 @@ elseif(isset($_POST["create_account"]))
 }
 else
 {
-    /**
-     * Redirige l'utilisateur vers index.php et doit afficher un message d'erreur.
-     */
+    exit;
 }

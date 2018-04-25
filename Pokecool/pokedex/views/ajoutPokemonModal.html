@@ -1,0 +1,70 @@
+<?php
+$types = TypeModel::getAllType();
+?>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Ajout d'un pokemon</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form action="index.php?uc=pokemon&ac=add" method="POST">
+
+                    <label class="control-label" for="nom_pokemon">Nom pokemon :</label>
+                    <input id="nom_pokemon" name="nom_pokemon" class="form-control" placeholder="Nom du pokemon.." type="text" required>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+
+                            <!-- Select type1 -->
+                            <label class="col-md-4 control-label" for="select_type_1">Type 1 :</label>
+
+                            <select id="select_type_1" name="select_type_1" class="form-control">
+                                <?php
+                                foreach($types as $type)
+                                {
+                                    echo "<option value= $type[0] >$type[1]</option>";
+                                }
+                                ?>
+
+                            </select>
+
+
+                        </div>
+                        <div class="col">
+                            <!-- Select type 2 -->
+                            <label class="col-md-4 control-label" for="select_type_2">Type 2 :</label>
+                            <select id="select_type_2" name="select_type_2" class="form-control">
+                                <?php
+                                foreach($types as $type)
+                                {
+                                    echo "<option value= $type[0] >$type[1]</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <label class=" control-label">Ce Pokemon possède une évolution ?</label>
+                    <br>
+                    <label class="radio-inline" for="radios-0">
+                        <input type="radio" name="radios_evolution" id="radios-0" value="1" checked="checked">
+                        Oui
+                    </label>
+                    <label class="radio-inline" for="radios-1">
+                        <input type="radio" name="radios_evolution" id="radios-1" value="0">
+                        Non
+                    </label>
+
+                    <input class="btn btn-success pull-right" type="submit" value="Ajouter"/>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

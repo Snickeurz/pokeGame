@@ -1,0 +1,37 @@
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col"># ID</th>
+        <th scope="col"><span class="fa fa-user"></span> Nom</th>
+        <th scope="col"><span class="fa fa-fire"></span> Type 1</th>
+        <th scope="col"><span class="fa fa-fire"></span> Type 2</th>
+        <th scope="col"><span class="fa fa-connectdevelop"></span> Evolution (o/n)</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+        foreach($informations as $informationPokemon)
+        {
+            echo "<tr>";
+            echo "<td>".$informationPokemon[0]."</td>";
+            echo "<td>".$informationPokemon[1]."</td>";
+            echo "<td>".$informationPokemon[2]."</td>";
+            echo "<td>".$informationPokemon[3]."</td>";
+
+            if($informationPokemon[4])
+            {
+                echo "<td> Ce pokemon peut évoluer </td>";
+            }
+            else
+            {
+                echo "<td> Ce pokemon ne peut évoluer </td>";
+            }
+
+            echo "<td><a href='index.php?uc=pokemon&ac=show&idPokemon=$informationPokemon[0]' type='button' class='btn btn-info arrondi'><span class='fa fa-eye'></span> Détails</a>";
+            echo "<a href='index.php?uc=pokemon&ac=delete&idPokemon=$informationPokemon[0]' type='button' class='btn btn-danger arrondi'><span class='fa fa-trash'></span> Supprimer</a> </td>";
+            echo "</tr>";
+        }
+    ?>
+    </tbody>
+</table>

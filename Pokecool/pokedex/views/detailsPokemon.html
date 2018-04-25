@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="card background_details">
+        <div class="container-fluid">
+            <div class="wrapper row">
+                <div class="col-md-6">
+                    <img src="./ressources/images/details.jpg" style="height: 100%;"/>
+
+                </div>
+                <div class="details col-md-6">
+                    <div class="panel panel-default text-center">
+                        <h3 class="libelle_details"><div class="panel-title"><span class="glyphicon glyphicon-list-alt"></span>Nom du pokemon </div></h3>
+                        <hr>
+                        <h4><?php echo $informationsPokemon[1]; ?></h4>
+                    </div>
+<br><br>
+                    <div class="panel panel-default text-center">
+                        <div class="rating">
+                            <h3 class="libelle_details"><div class="panel-title"><span class="glyphicon glyphicon-info-sign"></span>Evolution disponible</div></h3>
+                            <hr>
+                            <h4>
+                                <?php
+                                    if($informationsPokemon)
+                                    {
+                                        echo "Ce pokémon possède une évolution";
+                                    }
+                                    else
+                                    {
+                                        echo "Ce pokémon ne possède pas d'évolution. C'est un pokémon de base.";
+                                    }
+                                ?>
+                            </h4>
+                        </div>
+                    </div>
+<br><br>
+                    <div class="panel panel-default text-center">
+                        <div class="rating">
+                            <h3 class="libelle_details"><div class="panel-title"><span class="glyphicon glyphicon-info-sign"></span>Types possédé :</div></h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <h4>
+                                        <?php echo TypeModel::getLibelleType($informationsPokemon[2]); ?>
+                                    </h4>
+                                </div>
+                                <div class="col">
+                                    <h4>
+                                        <?php echo TypeModel::getLibelleType($informationsPokemon[3]); ?>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <div class="text-center">
+                       <?php
+                        echo "<a href='index.php?uc=pokemon&ac=delete&idPokemon=$informationsPokemon[0]' class='btn btn-danger pull-right arrondi' type='button'><span class='fa fa-trash'></span> Supprimer le pokemon</a>";
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

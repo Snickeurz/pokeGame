@@ -16,3 +16,28 @@ body
 {
     height: 100%;
 }
+
+.margin
+{
+    margin-top:-8px;
+}
+
+.sizeSoldeAnnonce
+{
+    font-size: 25px;
+}
+
+.zoom
+{
+    transition : .2s;
+}
+.zoom:hover
+{
+    transform: scale(1.5);
+}
+
+.starterSize
+{
+    max-width: 20%;
+    max-height: 20%;
+}

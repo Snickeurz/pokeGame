@@ -5,16 +5,54 @@
  */
 include("model/class.pdo.inc.php");
 
-session_start();
+
+/***********************************
+ *          DECLARATIONS           *
+ *          -------------          *
+ *             MODELS              *
+ *            MANAGERS             *
+ **********************************/
+
 /**
- * Inclusion de méthodes utilitaires :
+ * Compte
+ */
+include("model/CompteModel.php");
+include("manager/CompteManager.php");
+
+/**
+ * annonces
+ */
+include ("model/collection/Collection.php");
+include("model/MarketModel.php");
+include("Manager/AnnoncesManager.php");
+/**
+ * Pokemon
+ */
+include("model/PokemonModel.php");
+
+/**
+ * Comat
+ */
+include("model/EntrainementModel.php");
+include("controler/EntrainementControler.php");
+include("views/combat/courbe_experience.php");
+
+
+
+/**
+ * Inclusion de méthodes utilitaires get[Uc][Ac]:
  * Notamment la récupération des paramètres uc & ac.
  */
 include("helperMethode.php");
+
+/////////////////////////////////////////////////////////////////////
+/**
+ * Set session.
+ */
+session_start();
 /**
  * inclusion de l'entête html
  */
-
 include("base.html");
 
 /**
@@ -31,6 +69,12 @@ if(!isset($_SESSION["__valide"]))
 }
 else
 {
+
+    /**
+     * Starter
+     */
+    include("starter.php");
+
     /**
      * Inclusion de la barre de naviguation.
      */
@@ -61,8 +105,6 @@ else
          * L'utilisateur souhaite se faire une action sur son profil.
          */
         case "compte":
-            include("model/CompteModel.php");
-            include("manager/CompteManager.php");
             include("controler/CompteControler.php");
             switch ($ac)
             {
@@ -84,10 +126,8 @@ else
          * L'utilisateur souhaite faire une action dans le marché.
          */
         case "annonces":
-            include ("model/collection/Collection.php");
-            include("model/MarketModel.php");
-            include("Manager/AnnoncesManager.php");
             include("controler/AnnonceControler.php");
+            include("controler/CompteControler.php");
             switch ($ac)
             {
                 /**
@@ -110,7 +150,6 @@ else
          * L'utilisateur souhaite faire une action sur les pokémons.
          */
         case "pokemon":
-            include("model/PokemonModel.php");
             include("controler/pokemonControler.php");
             switch ($ac)
             {
@@ -130,9 +169,6 @@ else
          * L'utilisateur souhaite partir en croisade.
          */
         case "combat":
-            include("model/EntrainementModel.php");
-            include("controler/EntrainementControler.php");
-            include("views/combat/courbe_experience.php");
             switch ($ac)
             {
                 /**

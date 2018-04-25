@@ -9,8 +9,10 @@
                 <div class="col">
                     <div class="row" style="margin-top:20px;">
                         <div class="col">
-                            <div class="experience-profil font-weight-bold">
-                                654654
+                            <div class="experience-profil font-weight-bold margin">
+                                <?php
+                                    echo $compte->getExperience();
+                                ?>
                             </div>
                         </div>
                         <div class="col">
@@ -22,8 +24,10 @@
                             <img src="./ressources/images/profil/lvl.jpg" class="full-width"/>
                         </div>
                         <div class="col">
-                            <div class="experience-profil font-weight-bold">
-                                65
+                            <div class="experience-profil font-weight-bold margin">
+                                <?php
+                                    echo $compte->getLevel();
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -38,6 +42,7 @@
         </div>
         <div class="col"></div>
     </div>
+    <hr>
     <div class="row full-width">
         <div class="col col-lg-2">
         </div>
