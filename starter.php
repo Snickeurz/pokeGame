@@ -15,8 +15,10 @@ if(CompteManager::isNewUser($_SESSION["id"]))
         });
         function setStarter(starter) {
             idStarter=$("#idStarter").val();
+
             $.ajax({ url: 'setStarter.php',
-                data: {pokemon: starter,
+                data: {
+                    pokemon: starter,
                     id : idStarter
                 },
                 type: 'post',

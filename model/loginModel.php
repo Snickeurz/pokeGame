@@ -32,15 +32,25 @@ class loginModel
      */
     public static function inscription($nom, $prenom, $pseudo, $tel, $email, $pass)
     {
+        $new_user = true;
+        $solde = 5000;
+        $xp = 0;
+        $lvl = 1;
+        $starter ="";
         $monPdo = MonPdo::getInstance();
-        $insert = $monPdo->prepare("INSERT INTO users(nom, prenom, pseudo, telephone, email, password, new_user) VALUES (:nom, :prenom, :pseudo, :telephone, :email, :password, :new_user)");
+        $insert = $monPdo->prepare("INSERT INTO users(nom, prenom, pseudo, telephone, email, password, xp, lvl, solde, new_user, starter)
+ VALUES (:nom, :prenom, :pseudo, :telephone, :email, :pass, :xp, :lvl, :solde, :new_user, :starter)");
         $insert->bindParam(":nom",$nom,PDO::PARAM_STR);
         $insert->bindParam(":prenom",$prenom,PDO::PARAM_STR);
         $insert->bindParam(":pseudo",$pseudo,PDO::PARAM_STR);
         $insert->bindParam(":telephone",$tel,PDO::PARAM_STR);
         $insert->bindParam(":email",$email,PDO::PARAM_STR);
-        $insert->bindParam(":password",$pass,PDO::PARAM_STR);
-        $insert->bindParam(":new_user",true,PDO::PARAM_BOOL);
+        $insert->bindParam(":pass",$pass,PDO::PARAM_STR);
+        $insert->bindParam(":xp",$xp,PDO::PARAM_INT);
+        $insert->bindParam(":lvl",$lvl,PDO::PARAM_INT);
+        $insert->bindParam(":solde",$solde,PDO::PARAM_INT);
+        $insert->bindParam(":new_user",$new_user,PDO::PARAM_BOOL);
+        $insert->bindParam(":starter",$starter,PDO::PARAM_STR);
         return $insert->execute();
     }
 }

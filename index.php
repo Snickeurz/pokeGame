@@ -69,7 +69,10 @@ if(!isset($_SESSION["__valide"]))
 }
 else
 {
-
+    /**
+     * Récupère le compte
+     */
+    include("controler/CompteControler.php");
     /**
      * Starter
      */
@@ -105,7 +108,6 @@ else
          * L'utilisateur souhaite se faire une action sur son profil.
          */
         case "compte":
-            include("controler/CompteControler.php");
             switch ($ac)
             {
                 /**

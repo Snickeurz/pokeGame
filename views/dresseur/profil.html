@@ -45,6 +45,25 @@
     <hr>
     <div class="row full-width">
         <div class="col col-lg-2">
+            <?php
+                $starter = compteManager::getStarter($compte->getId());
+                echo "<p class='text-center font-weight-bold'>STARTER :</p>";
+                switch($starter)
+                {
+                    case 'pikachu':
+                            echo "<img src='./ressources/images/starter/pikachu.png' class='full-width'/> ";
+                        break;
+                    case 'salameche':
+                            echo "<img src='./ressources/images/starter/salameche.png' class='full-width'/> ";
+                        break;
+                    case 'bulbizare':
+                            echo "<img src='./ressources/images/starter/bulbizar.jpg' class='full-width'/> ";
+                        break;
+
+                    default:
+                        break;
+                }
+            ?>
         </div>
         <div class="col">
             <div class="row">
@@ -93,6 +112,9 @@
                                 <?php echo $compte->getTelephone(); ?>
                             </h6>
                         </div>
+                        <br>
+                        <hr>
+                        <br>
                         <div class="col">
                             <h4 class="font-weight-bold text-center">Password :</h4>
                             <hr>

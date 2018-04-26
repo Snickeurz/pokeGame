@@ -70,14 +70,11 @@ class compteManager
      * Met à jour l'xp du compte.
      *
      * @param $xp
-     * @return mixed
+     * @return true | false
      */
     public function gainExp($xp)
     {
-        $compte = new CompteModel();
         $monPdo = MonPdo::getInstance();
-
-        $compte->setExperience($xp);
         $updateXP = $monPdo->prepare("UPDATE users SET xp = :xp");
         $updateXP->bindParam(":xp", $xp);
         return $updateXP->execute();
@@ -105,14 +102,29 @@ class compteManager
      * @param string $starter le nom du pokemon choisit en starter
      * @return mixed
      */
-    public static function setStarter($id, $starter)
+    public static function setStarter($starter,$id)
     {
+        $new_user = false;
         $monPdo = MonPdo::getInstance();
         $setStarter = $monPdo->prepare("UPDATE users SET starter = :starter, new_user = :new_user WHERE id = :id");
         $setStarter->bindParam(":starter", $starter, PDO::PARAM_STR);
-        $setStarter->bindParam(":new_user", false, PDO::PARAM_BOOL);
+        $setStarter->bindParam(":new_user", $new_user, PDO::PARAM_BOOL);
         $setStarter->bindParam(":id", $id, PDO::PARAM_INT);
         return $setStarter->execute();
     }
 
+    /**
+     * Récupère le starter choisit
+     *
+     * @param int $id
+     * @return string || false
+     */
+    public static function getStarter($id)
+    {
+        $monPdo = MonPdo::getInstance();
+        $getStarter = $monPdo->prepare("SELECT starter FROM users WHERE id = :id");
+        $getStarter->bindParam(":id",$id);
+        $getStarter->execute();
+        return $getStarter->fetchColumn();
+    }
 }

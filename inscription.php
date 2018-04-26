@@ -12,6 +12,7 @@ $pass = $_POST["pass"]; // Le mot de passe du compte.
 /**
  * Persistance des données.
  */
+var_dump(loginModel::inscription($nom, $prenom, $pseudo, $tel, $email, $pass));
 if(loginModel::inscription($nom, $prenom, $pseudo, $tel, $email, $pass))
 {
     /**

@@ -9,15 +9,37 @@
 include ("model/class.pdo.inc.php");
 include ("Manager/CompteManager.php");
 
-$pokemon = $_POST["pokemon"];
-$id = $_POST["id"];
+$post_pokemon = $_POST["pokemon"];
+if(isset($post_pokemon)&&!empty($post_pokemon))
+{
+    $pokemon = $post_pokemon;
+}
+else
+{
+    $pokemon=null;
+}
+$post_id = $_POST["id"];
+if(isset($post_id)&&!empty($post_id))
+{
+    $id = $post_id;
+}
+else
+{
+    $id=null;
+}
+
 if(isset($pokemon)&&!empty($pokemon))
 {
-    if(compteManager::setStarter($pokemon, substr($id,0,1)))
+    $id = str_split($id);
+    if(compteManager::setStarter($pokemon,$id[0]))
     {
         return true;
     }
     else{
         return false;
     }
+}
+else
+{
+    exit;
 }

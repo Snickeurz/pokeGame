@@ -47,7 +47,6 @@ $(function() {
          */
         $("#fail_login").addClass("show");
     }
-
 });
 
 /**
