@@ -6,20 +6,21 @@ $(function() {
     /**
      * Pour bienvenido
      */
-    var bienvenido = getUrlParameter('accueil');
+    var bienvenido = getUrlParameter("accueil");
+    alert(bienvenido);
     if(bienvenido="accueil"&&bienvenido!=null)
     {
         /**
          * On affiche bienvenido
          */
-        $("#bienvenido").addClass("show");
+        $("#bienvenido").show();
     }
     else
     {
         /**
          * On cache bienvenido
          */
-        $("#bienvenido").removeClass("show");
+        $("#bienvenido").hide();
     }
 });
 
