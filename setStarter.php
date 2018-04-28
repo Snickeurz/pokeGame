@@ -8,6 +8,7 @@
 
 include ("model/class.pdo.inc.php");
 include ("Manager/CompteManager.php");
+include ("Manager/PokemonManager.php");
 
 $post_pokemon = $_POST["pokemon"];
 if(isset($post_pokemon)&&!empty($post_pokemon))
@@ -28,10 +29,12 @@ else
     $id=null;
 }
 
+
 if(isset($pokemon)&&!empty($pokemon))
 {
     $id = str_split($id);
-    if(compteManager::setStarter($pokemon,$id[0]))
+    $idPokemon = PokemonManager::getIdByLibelle($pokemon).",";
+    if(compteManager::setStarter($pokemon,$id[0], $idPokemon))
     {
         return true;
     }

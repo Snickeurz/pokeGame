@@ -6,21 +6,20 @@ $(function() {
     /**
      * Pour bienvenido
      */
-    var bienvenido = getUrlParameter("accueil");
-    alert(bienvenido);
-    if(bienvenido="accueil"&&bienvenido!=null)
+    var bienvenido = getQueryParam("uc");
+    if(bienvenido!=="accueil"&&bienvenido!=null)
     {
         /**
          * On affiche bienvenido
          */
-        $("#bienvenido").show();
+        $("#bienvenido").hide();
     }
     else
     {
         /**
          * On cache bienvenido
          */
-        $("#bienvenido").hide();
+        $("#bienvenido").show();
     }
 });
 
@@ -28,23 +27,12 @@ $(function() {
  * Cette fonction recupère un paramètre donné dans l'url
  * @param sParam le paramètre a chercher
  * @returns {boolean}
- */
-var getUrlParameter = function getUrlParameter(sParam)
-{
-    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-
-    for (i = 0; i < sURLVariables.length; i++)
-    {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === sParam)
-        {
-            return sParameterName[1] === undefined ? true : sParameterName[1];
-        }
-    }
-};
-
+ */function getQueryParam(param) {
+    location.search.substr(1)
+        .split("&")
+        .some(function(item) { // returns first occurence and stops
+            return item.split("=")[0] == param && (param = item.split("=")[1])
+        })
+    return param
+}
 

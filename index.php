@@ -12,6 +12,11 @@ include("model/class.pdo.inc.php");
  *             MODELS              *
  *            MANAGERS             *
  **********************************/
+/**
+ * Collection
+ */
+
+include ("model/collection/Collection.php");
 
 /**
  * Compte
@@ -22,13 +27,13 @@ include("manager/CompteManager.php");
 /**
  * annonces
  */
-include ("model/collection/Collection.php");
 include("model/MarketModel.php");
 include("Manager/AnnoncesManager.php");
 /**
  * Pokemon
  */
 include("model/PokemonModel.php");
+include("Manager/PokemonManager.php");
 
 /**
  * Comat

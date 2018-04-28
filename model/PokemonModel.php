@@ -35,15 +35,14 @@ class PokemonModel
      */
     protected $sexe;
     /**
-     * @var int $prixVente Le prix de vente du pokémon.
-     */
-    protected $prixVente;
-    /**
      * @var int $vie
      * la vie du pokemon.
      */
     protected $vie;
-
+    /**
+     * @var bool $evolution true si il peut évoluer sinon false
+     */
+    protected $evolution;
 
     /**
      * PokemonModel's constructor.
@@ -58,8 +57,8 @@ class PokemonModel
      */
     public final function toString()
     {
-        return  "ID : ".$this->getId()." Espece : ".$this->getEspece()." Level : ".$this->getLevel()." Experience : ".$this->getExperience()." Type 1 : ".$this->getType1().
-            " Type 2 :".$this->getType2()."Sexe :".$this->getSexe()." Prix vente : ".$this->getPrixVente()." Vie :".$this->getVie();
+        return  " Sexe : ".$this->getSexe()."<br> Vie : ".$this->getVie()."<br> Level : ".$this->getLevel()." Experience : ".$this->getExperience()." <br>Type 1 : ".$this->getType1().
+            " Type 2 : ".$this->getType2();
     }
 
     /*************************************************
@@ -167,7 +166,16 @@ class PokemonModel
      */
     public function getSexe()
     {
-        return $this->sexe;
+        $sexe ="";
+        if($this->sexe)
+        {
+            $sexe = "mâle";
+        }
+        else
+        {
+            $sexe = "femelle";
+        }
+        return $sexe;
     }
 
     /**
@@ -176,22 +184,6 @@ class PokemonModel
     public function setSexe($sexe)
     {
         $this->sexe = $sexe;
-    }
-
-    /**
-     * @return int $this->prixVente
-     */
-    public function getPrixVente()
-    {
-        return $this->prixVente;
-    }
-
-    /**
-     * @param int $prixVente
-     */
-    public function setPrixVente($prixVente)
-    {
-        $this->prixVente = $prixVente;
     }
 
     /**
@@ -208,6 +200,22 @@ class PokemonModel
     public function setVie($vie)
     {
         $this->vie = $vie;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEvolution()
+    {
+        return $this->evolution;
+    }
+
+    /**
+     * @param bool $evolution
+     */
+    public function setEvolution($evolution)
+    {
+        $this->evolution = $evolution;
     }
 
 }

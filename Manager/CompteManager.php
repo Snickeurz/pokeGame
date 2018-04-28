@@ -49,21 +49,10 @@ class compteManager
     public static function getListePokemon($id)
     {
         $monPdo = MonPdo::getInstance();
-        $collectionPokemon = new Collection();
-
         $listePokemonPossede = $monPdo->prepare("SELECT arrayPokemon FROM users WHERE id = :id");
         $listePokemonPossede->bindParam(":id", $id, PDO::PARAM_INT);
         $listePokemonPossede->execute();
-        $listePokemonPossede->fetchColumn();
-
-        $arrayPokemon = str_split(",",$listePokemonPossede);
-
-        foreach ($arrayPokemon as $unPokemon)
-        {
-            $collectionPokemon->addInCollection($unPokemon);
-        }
-
-        return $collectionPokemon;
+        return $listePokemonPossede->fetchColumn();
     }
 
     /**
@@ -102,13 +91,14 @@ class compteManager
      * @param string $starter le nom du pokemon choisit en starter
      * @return mixed
      */
-    public static function setStarter($starter,$id)
+    public static function setStarter($starter,$id, $idPokemon)
     {
         $new_user = false;
         $monPdo = MonPdo::getInstance();
-        $setStarter = $monPdo->prepare("UPDATE users SET starter = :starter, new_user = :new_user WHERE id = :id");
+        $setStarter = $monPdo->prepare("UPDATE users SET starter = :starter, new_user = :new_user, arrayPokemon = concat(arrayPokemon, :idPokemon) WHERE id = :id");
         $setStarter->bindParam(":starter", $starter, PDO::PARAM_STR);
         $setStarter->bindParam(":new_user", $new_user, PDO::PARAM_BOOL);
+        $setStarter->bindParam(":idPokemon", $idPokemon, PDO::PARAM_INT);
         $setStarter->bindParam(":id", $id, PDO::PARAM_INT);
         return $setStarter->execute();
     }
@@ -127,4 +117,22 @@ class compteManager
         $getStarter->execute();
         return $getStarter->fetchColumn();
     }
+
+
+    /**
+     * Rajoute un pokemon dans la liste des pokémons possédé.
+     *
+     * @param int $idDresseur
+     * @param int $idPokemon
+     * @return mixed
+     */
+    public static function addPokemonPossede($idDresseur, $idPokemon)
+    {
+        $monPdo = MonPdo::getInstance();
+        $setStarter = $monPdo->prepare("UPDATE users SET arrayPokemon = concat(arrayPokemon, :idPokemon) WHERE id = :id");
+        $setStarter->bindParam(":idPokemon", $idPokemon, PDO::PARAM_INT);
+        $setStarter->bindParam(":id", $idDresseur, PDO::PARAM_INT);
+        return $setStarter->execute();
+    }
+
 }

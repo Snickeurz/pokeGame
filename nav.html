@@ -73,7 +73,7 @@
 
             <div class="alert alert-dark font-weight-bold text-center text-uppercase" id="bienvenido" role="alert">
                 <?php
-                    echo "BIENVENIDO ".$compte->getPseudo();
+                    echo "BIENVENIDO ".$compte->getPseudo()." - ".$compte->getSolde()." or";
                 ?>
             </div>
         </div>
@@ -82,9 +82,17 @@
 </div>
 
 <script>
-    function redirection()
+    function redirection(uc,ac, dir)
     {
-       window.location.replace("./Pokecool/pokedex/index.php?uc=redirect&ac=accueil");
+        switch (dir)
+        {
+            case 0:
+                window.location.replace("./index.php?uc="+uc+"&ac="+ac+"");
+                break;
+            default:
+                window.location.replace("./Pokecool/pokedex/index.php?uc="+uc+"&ac="+ac+"");
+                break;
+        }
     }
 </script>
 

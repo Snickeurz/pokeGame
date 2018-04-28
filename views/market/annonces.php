@@ -2,7 +2,7 @@
 <?php
 
 echo "<div class=\"alert alert-light text-center sizeSoldeAnnonce font-weight-bold\" role=\"alert\">";
-    echo "SOLDE ACTUELLE : ".$compte->getSolde();
+    echo "SOLDE ACTUELLE : ".$compte->getSolde()." pièces d'or";
 echo "</div>";
 for($i=0; $i<$collection->getSize();$i++)
 {

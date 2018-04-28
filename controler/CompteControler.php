@@ -9,3 +9,13 @@
 
 $compte = null;
 $compte = compteManager::constructCompteFromDB($_SESSION["id"]);
+
+/////////////////////////////////////////////////////////////////
+///
+$collectionPokemon = new Collection();
+$listePokemon = compteManager::getListePokemon($_SESSION["id"]);
+$arrayPokemon = explode(",",$listePokemon);
+foreach ($arrayPokemon as $unPokemon)
+{
+    $collectionPokemon->addInCollection(PokemonManager::constructCompteFromDB($unPokemon));
+}
