@@ -38,7 +38,7 @@ include("Manager/PokemonManager.php");
 /**
  * Comat
  */
-include("model/EntrainementModel.php");
+include("model/EntrainementManager.php");
 include("controler/EntrainementControler.php");
 include("views/combat/courbe_experience.php");
 

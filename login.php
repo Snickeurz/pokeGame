@@ -42,7 +42,7 @@ if(isset($_POST["email"])&!empty($_POST["email"])&isset($_POST["password"])&!emp
         /**
          * Rediriger l'utlisateur vers index.php.
          */
-        echo '<script>window.location.replace("./index.php");</script>';
+        echo '<script>window.location.replace("./index.php?uc=accueil&ac=show");</script>';
     }
     /**
      * Redirige l'utilisateur vers index.php et doit afficher un message d'erreur.
