@@ -61,4 +61,65 @@ class PokemonManager
         return $id->fetchColumn();
     }
 
+    /**
+     * Give random xp to specific pokemon.
+     *
+     * @param int $idPokemon
+     */
+    public static function addRandomXp($idPokemon, $actualXp)
+    {
+        $xp = rand(10,30);
+        $monPdo = MonPdo::getInstance();
+        $updateXp = $monPdo->prepare("UPDATE pokemon SET xp = :xp WHERE id = :id");
+        $updateXp->bindParam(":xp",$xp);
+        $updateXp->bindParam(":id",$idPokemon);
+        return $updateXp->execute();
+    }
+
+    /**
+     * Récupère l'xp du pokemon
+     *
+     * @param int $idPokemon
+     * @return int xp du pokemon
+     */
+    public static function getXp($idPokemon)
+    {
+        $monPdo = MonPdo::getInstance();
+        $getXp = $monPdo->prepare("SELECT xp FROM pokemon WHERE id = :id");
+        $getXp->bindParam(":id",$idPokemon);
+        return $getXp->execute();
+    }
+
+    /**
+     * Détermine si un pokemon peut s'entraîner.
+     *
+     * @param int $idPokemon
+     * @return bool true s'il peut s'entraîner sinon false
+     */
+    public static function canTrain($idPokemon)
+    {
+        $monPdo = MonPdo::getInstance();
+        $canTrain = $monPdo->prepare("SELECT heureEntrainement FROM pokemon WHERE id = :id");
+        $canTrain->bindParam(":id",$idPokemon);
+        $heureDernierEntrainement = $canTrain->fetchColumn();
+        $heureActuel = date("H:m:s");
+        return $heureDernierEntrainement <= strtotime('-1 hour', strtotime($heureActuel)) ? true : false;
+    }
+
+    /**
+     * Le pokemon s'entraine :
+     * Met à jour la colonne heureEntrainement.
+     *
+     * @param $idPokemon
+     * @return mixed
+     */
+    public static function setHeureEntrainement($idPokemon)
+    {
+        $heureEntrainement = date("H:m:s");
+        $monPdo = MonPdo::getInstance();
+        $updateHeureEntrainement = $monPdo->prepare("UPDATE pokemon SET heureEntrainement = :heureEntrainement WHERE id = :id");
+        $updateHeureEntrainement->bindParam(":heureEntrainement",$heureEntrainement);
+        $updateHeureEntrainement->bindParam(":id",$idPokemon);
+        return $updateHeureEntrainement->execute();
+    }
 }

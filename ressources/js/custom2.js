@@ -7,19 +7,19 @@ $(function() {
      * Pour bienvenido
      */
     var bienvenido = getQueryParam("uc");
-    if(bienvenido!=="accueil"&&bienvenido!=null)
+    if(bienvenido==="accueil")
     {
         /**
          * On affiche bienvenido
          */
-        $("#bienvenido").hide();
+        $("#bienvenido").show();
     }
     else
     {
         /**
          * On cache bienvenido
          */
-        $("#bienvenido").show();
+        $("#bienvenido").hide();
     }
 });
 
