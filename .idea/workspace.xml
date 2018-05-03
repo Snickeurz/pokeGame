@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ca1b5f2-3d7e-4607-bb42-bf5c23e664e2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Manager/PokemonManager.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Manager/CompteManager.php" afterPath="$PROJECT_DIR$/Manager/CompteManager.php" />
-      <change beforePath="$PROJECT_DIR$/controler/CompteControler.php" afterPath="$PROJECT_DIR$/controler/CompteControler.php" />
-      <change beforePath="$PROJECT_DIR$/controler/pokemonControler.php" afterPath="$PROJECT_DIR$/controler/pokemonControler.php" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/inscription.php" afterPath="$PROJECT_DIR$/inscription.php" />
-      <change beforePath="$PROJECT_DIR$/model/PokemonModel.php" afterPath="$PROJECT_DIR$/model/PokemonModel.php" />
-      <change beforePath="$PROJECT_DIR$/nav.html" afterPath="$PROJECT_DIR$/nav.html" />
-      <change beforePath="$PROJECT_DIR$/ressources/js/custom2.js" afterPath="$PROJECT_DIR$/ressources/js/custom2.js" />
-      <change beforePath="$PROJECT_DIR$/setStarter.php" afterPath="$PROJECT_DIR$/setStarter.php" />
-      <change beforePath="$PROJECT_DIR$/views/home.html" afterPath="$PROJECT_DIR$/views/home.html" />
-      <change beforePath="$PROJECT_DIR$/views/market/annonces.php" afterPath="$PROJECT_DIR$/views/market/annonces.php" />
-    </list>
+    <list default="true" id="2ca1b5f2-3d7e-4607-bb42-bf5c23e664e2" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,39 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompteManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Manager/CompteManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="50" column="40" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
-              <folding>
-                <marker date="1524921522905" expanded="true" signature="531:621" ph="SELECT id, n... users" />
-                <marker date="1524921522905" expanded="true" signature="1701:1746" ph="SELECT array... users" />
-                <marker date="1524921522905" expanded="true" signature="2140:2165" ph="UPDATE users... " />
-                <marker date="1524921522905" expanded="true" signature="2553:2594" ph="SELECT new_u... users" />
-                <marker date="1524921522905" expanded="true" signature="3110:3231" ph="UPDATE users... " />
-                <marker date="1524921522905" expanded="true" signature="3799:3839" ph="SELECT start... users" />
-                <marker date="1524921522905" expanded="true" signature="4291:4370" ph="UPDATE users... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PokemonModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/PokemonModel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
               <caret line="69" column="7" lean-forward="true" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompteControler.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controler/CompteControler.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -103,11 +61,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="combat.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="combat.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/combat/combat.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="187">
               <caret line="28" column="46" lean-forward="true" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Collection.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/collection/Collection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="924">
+              <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class.pdo.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/class.pdo.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="42" column="7" lean-forward="false" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CollectionInterface.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/collection/CollectionInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,16 +106,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
               <caret line="20" column="79" lean-forward="false" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profil.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/dresseur/profil.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -483,12 +461,12 @@
       <workItem from="1524684404426" duration="8852000" />
       <workItem from="1524773821725" duration="4680000" />
       <workItem from="1524871011762" duration="1151000" />
-      <workItem from="1524917012540" duration="5595000" />
+      <workItem from="1524917012540" duration="6197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69202000" />
+    <option name="totallyTimeSpent" value="69804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -632,33 +610,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/class.pdo.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="7" lean-forward="false" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/EntrainementModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/collection/CollectionInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/collection/Collection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,8 +871,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/combat/combat.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="187">
           <caret line="28" column="46" lean-forward="true" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/collection/Collection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/class.pdo.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="7" lean-forward="false" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/collection/CollectionInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
