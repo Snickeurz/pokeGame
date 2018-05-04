@@ -1,4 +1,8 @@
 <?php
+/**
+ * Set session.
+ */
+session_start();
 
 /**
  * PDO.
@@ -38,8 +42,7 @@ include("Manager/PokemonManager.php");
 /**
  * Comat
  */
-include("model/EntrainementManager.php");
-include("controler/EntrainementControler.php");
+include("Manager/EntrainementManager.php");
 include("views/combat/courbe_experience.php");
 
 
@@ -51,10 +54,6 @@ include("views/combat/courbe_experience.php");
 include("helperMethode.php");
 
 /////////////////////////////////////////////////////////////////////
-/**
- * Set session.
- */
-session_start();
 /**
  * inclusion de l'entête html
  */
@@ -75,9 +74,14 @@ if(!isset($_SESSION["__valide"]))
 else
 {
     /**
-     * Récupère le compte
+     * Compte controler.
      */
     include("controler/CompteControler.php");
+    /**
+     * EntrainementControler.
+     */
+    include("controler/EntrainementControler.php");
+
     /**
      * Starter
      */

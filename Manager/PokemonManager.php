@@ -62,13 +62,15 @@ class PokemonManager
     }
 
     /**
-     * Give random xp to specific pokemon.
+     * Augmente l'experience aléatoirement entre 10 et 30.
      *
      * @param int $idPokemon
+     * @param int $actualXp
      */
     public static function addRandomXp($idPokemon, $actualXp)
     {
-        $xp = rand(10,30);
+        $rand = rand(10,30);
+        $xp = $rand + $actualXp;
         $monPdo = MonPdo::getInstance();
         $updateXp = $monPdo->prepare("UPDATE pokemon SET xp = :xp WHERE id = :id");
         $updateXp->bindParam(":xp",$xp);
@@ -77,7 +79,7 @@ class PokemonManager
     }
 
     /**
-     * Récupère l'xp du pokemon
+     * Récupère l'xp du pokemon.
      *
      * @param int $idPokemon
      * @return int xp du pokemon

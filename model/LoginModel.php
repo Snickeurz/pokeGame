@@ -1,6 +1,6 @@
 <?php
 
-class loginModel
+class LoginModel
 {
     /**
      * Méthode utilitaire pour vérifier l'authentification.

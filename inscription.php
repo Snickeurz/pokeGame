@@ -12,7 +12,7 @@ $pass = $_POST["pass"]; // Le mot de passe du compte.
 /**
  * Persistance des données.
  */
-if(loginModel::inscription($nom, $prenom, $pseudo, $tel, $email, $pass))
+if(LoginModel::inscription($nom, $prenom, $pseudo, $tel, $email, $pass))
 {
     /**
      * Redirection sur index.php avec le paramètre @compte = created.

@@ -13,8 +13,24 @@
                                 <div class="row">
                                     <div class="col">
                                         <select id="selectpokemon" name="selectpokemon" class="form-control">
-                                            <option value="1">Option one</option>
-                                            <option value="2">Option two</option>
+                                            <option value="">-- Choix du pokémon --</option>
+                                            <?php
+                                            for($i=0; $i<$collectionPokemon->getSize();$i++)
+                                            {
+                                                $id = $collectionPokemon->getObjectAtIndex($i)->getId();
+                                                $lvl = $collectionPokemon->getObjectAtIndex($i)->getLevel();
+                                                $espece = $collectionPokemon->getObjectAtIndex($i)->getEspece();
+                                                if(PokemonManager::canTrain($id))
+                                                {
+                                                    echo "<option value=$id style='color:green;'>$espece (lvl : $lvl)</option>";
+                                                }
+                                                else
+                                                {
+                                                    echo "<option disabled='disabled' value=$id style='color:darkred;'>".$collectionPokemon->getObjectAtIndex($i)->getEspece()."</option>";
+                                                }
+
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                     <div class="col">

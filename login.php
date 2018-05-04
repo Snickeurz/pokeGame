@@ -13,7 +13,7 @@ include("model/class.pdo.inc.php");
 /**
  * Méthodes static pour la gestion du log.
  */
-include("model/loginModel.php");
+include("model/LoginModel.php");
 
 /**
  * On vérifie les variables de type POST reçu ainsi que l'action à faire.
@@ -24,7 +24,7 @@ if(isset($_POST["email"])&!empty($_POST["email"])&isset($_POST["password"])&!emp
      * Vérification des variables fournit.
      */
     $id = null;
-    $id = loginModel::checkUser($_POST["email"], $_POST["password"]);
+    $id = LoginModel::checkUser($_POST["email"], $_POST["password"]);
     if($id != null)
     {
         /**

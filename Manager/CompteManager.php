@@ -1,7 +1,7 @@
 <?php
 
 
-class compteManager
+class CompteManager
 {
     /**
      * Récupère les informations d'un compte en fonction d'un id.
