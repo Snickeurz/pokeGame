@@ -27,7 +27,7 @@ class EntrainementManager
         $row = 1;
         $arrayPokemon = array();
 
-        if (($handle = fopen("pokemon.csv", "r")) !== FALSE) {
+        if (($handle = fopen("./Manager/pokemon.csv", "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE && $stop == false) {
                 if($row==$randomLigne)
                 {

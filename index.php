@@ -78,11 +78,6 @@ else
      */
     include("controler/CompteControler.php");
     /**
-     * EntrainementControler.
-     */
-    include("controler/EntrainementControler.php");
-
-    /**
      * Starter
      */
     include("starter.php");
@@ -138,7 +133,6 @@ else
          */
         case "annonces":
             include("controler/AnnonceControler.php");
-            include("controler/CompteControler.php");
             switch ($ac)
             {
                 /**
@@ -168,6 +162,7 @@ else
                  * L'utilisateur souhaite consulter pokémon.
                  */
                 case "show":
+                    include("views/dresseur/listePokemon.html");
                     break;
                 /**
                  * Par défaut on effectue aucune action.
@@ -186,7 +181,15 @@ else
                  * Lancement de l'interface de combat.
                  */
                 case "play":
+                    /**
+                     * EntrainementControler.
+                     */
+                    include("controler/EntrainementControler.php");
+
                     include("views/combat/combat.html");
+                    break;
+                case "capture":
+                    include("controler/EntrainementControler.php");
                     break;
                 /**
                  * Par défaut on effectue aucune action.

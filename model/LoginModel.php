@@ -12,9 +12,9 @@ class LoginModel
     public static function checkUser($mail, $pass)
     {
         $monPdo = MonPdo::getInstance();
-        $check = $monPdo->prepare("SELECT id FROM users WHERE email = :email AND password = :password");
+        $check = $monPdo->prepare("SELECT id FROM users WHERE email = :email AND pass = :pass");
         $check->bindParam(":email",$mail,PDO::PARAM_STR);
-        $check->bindParam(":password",$pass,PDO::PARAM_STR);
+        $check->bindParam(":pass",$pass,PDO::PARAM_STR);
         $check->execute();
         return $check->fetchColumn();
     }
@@ -32,25 +32,25 @@ class LoginModel
      */
     public static function inscription($nom, $prenom, $pseudo, $tel, $email, $pass)
     {
-        $new_user = true;
+        $new_user = '1';
         $solde = 5000;
         $xp = 0;
         $lvl = 1;
-        $starter ="";
         $monPdo = MonPdo::getInstance();
-        $insert = $monPdo->prepare("INSERT INTO users(nom, prenom, pseudo, telephone, email, password, xp, lvl, solde, new_user, starter)
- VALUES (:nom, :prenom, :pseudo, :telephone, :email, :pass, :xp, :lvl, :solde, :new_user, :starter)");
-        $insert->bindParam(":nom",$nom,PDO::PARAM_STR);
-        $insert->bindParam(":prenom",$prenom,PDO::PARAM_STR);
-        $insert->bindParam(":pseudo",$pseudo,PDO::PARAM_STR);
-        $insert->bindParam(":telephone",$tel,PDO::PARAM_STR);
-        $insert->bindParam(":email",$email,PDO::PARAM_STR);
-        $insert->bindParam(":pass",$pass,PDO::PARAM_STR);
-        $insert->bindParam(":xp",$xp,PDO::PARAM_INT);
-        $insert->bindParam(":lvl",$lvl,PDO::PARAM_INT);
-        $insert->bindParam(":solde",$solde,PDO::PARAM_INT);
-        $insert->bindParam(":new_user",$new_user,PDO::PARAM_BOOL);
-        $insert->bindParam(":starter",$starter,PDO::PARAM_STR);
+        $insert = $monPdo->prepare("INSERT INTO users (nom, prenom, pseudo, telephone, email, pass, xp, lvl, solde, new_user, starter, arrayPokemon)
+ VALUES (:nom, :prenom, :pseudo, :telephone, :email, :pass, :xp, :lvl, :solde, :new_user, :starter, :arrayPokemon)");
+        $insert->bindValue(":nom",$nom,PDO::PARAM_STR);
+        $insert->bindValue(":prenom",$prenom,PDO::PARAM_STR);
+        $insert->bindValue(":pseudo",$pseudo,PDO::PARAM_STR);
+        $insert->bindValue(":telephone",$tel,PDO::PARAM_STR);
+        $insert->bindValue(":email",$email,PDO::PARAM_STR);
+        $insert->bindValue(":pass",$pass,PDO::PARAM_STR);
+        $insert->bindValue(":xp",$xp,PDO::PARAM_INT);
+        $insert->bindValue(":lvl",$lvl,PDO::PARAM_INT);
+        $insert->bindValue(":solde",$solde,PDO::PARAM_INT);
+        $insert->bindValue(":new_user",$new_user,PDO::PARAM_BOOL);
+        $insert->bindValue(":starter","",PDO::PARAM_STR);
+            $insert->bindValue(":arrayPokemon","",PDO::PARAM_STR);
         return $insert->execute();
     }
 }
