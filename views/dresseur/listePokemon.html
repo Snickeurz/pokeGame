@@ -11,10 +11,17 @@
             <?php
             for($i=0; $i<$collectionPokemon->getSize();$i++)
             {
+            $espece = $collectionPokemon->getObjectAtIndex($i)->getEspece();
             echo "<li>";
             echo "<span class='font-weight-bold'>".$collectionPokemon->getObjectAtIndex($i)->getEspece()." :</span> <br>".$collectionPokemon->getObjectAtIndex($i)->toString();
             echo "</li>";
-            echo "<br>";
+            echo "<br>Market : ";
+            echo "<form action='./index.php?uc=annonces&ac=vente_pokemon' method='POST'>
+        <input name='prix_vente' type='text' placeholder='prix..' class='arrondi'><br>
+        <input name='description' type='text' placeholder='description de la vente..' class='arrondi'>
+        <input hidden name='pokemon_vente' value=$espece>
+        <button type='submit' name='sell_pokemon' value=''> Mettre en vente !</button></form>";
+            echo "<hr><br>";
             }
             ?>
         </ul>

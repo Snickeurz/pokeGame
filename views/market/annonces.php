@@ -65,8 +65,9 @@ for($i=0; $i<$collection->getSize();$i++)
                     <?php
                      $nomPoke = $collection->getObjectAtIndex($i)->getPokemon();
                      $idPokemon = PokemonManager::getIdByLibelle($nomPoke);
-                     $idPokemon = 1;
-                    echo "<a href='achat.php?id=$idPokemon' type='button' class='btn btn-warning full-width'><span class='fa fa-credit-card'></span> Acheter</a>";
+                     //var_dump(PokemonManager::getIdByLibelle($nomPoke));
+
+                    echo "<a href='./index.php?achat.php?id=$idPokemon' type='button' class='btn btn-warning full-width'><span class='fa fa-credit-card'></span> Acheter</a>";
                     ?>
                 </div>
             </div>

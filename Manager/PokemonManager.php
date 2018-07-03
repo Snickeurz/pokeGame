@@ -55,9 +55,10 @@ class PokemonManager
     public static function getIdByLibelle($libelle)
     {
         $monPdo = MonPdo::getInstance();
-        $id = $monPdo->prepare("SELECT id from pokemon WHERE nom = :libelle");
+        $id = $monPdo->prepare("SELECT id from pokemon WHERE espece = :libelle");
         $id->bindParam(":libelle", $libelle);
         $id->execute();
+        var_dump($libelle);
         return $id->fetchColumn();
     }
 
@@ -117,10 +118,10 @@ class PokemonManager
      */
     public static function setHeureEntrainement($idPokemon)
     {
-        $heureEntrainement = date("H:m:s");
+        $heureEntrainement = 'now()';
         $monPdo = MonPdo::getInstance();
-        $updateHeureEntrainement = $monPdo->prepare("UPDATE pokemon SET heureEntrainement = :heureEntrainement WHERE id = :id");
-        $updateHeureEntrainement->bindParam(":heureEntrainement",$heureEntrainement);
+        $updateHeureEntrainement = $monPdo->prepare("UPDATE pokemon SET heureEntrainement = NOW() WHERE id = :id");
+        //$updateHeureEntrainement->bindParam(":heureEntrainement",$heureEntrainement);
         $updateHeureEntrainement->bindParam(":id",$idPokemon);
         return $updateHeureEntrainement->execute();
     }

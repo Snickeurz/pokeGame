@@ -5,6 +5,7 @@ $lieux = EntrainementManager::getLieux();
 
 if(isset($_POST["capture_pokemon"])&&!empty($_POST["capture_pokemon"]))
 {
+    //var_dump(PokemonManager::setHeureEntrainement($_POST["selectpokemon"]));
     $pokemonCapture = EntrainementManager::getRandomPokemonFromCSV();
  echo "<div class='card'><div class='card-header'><span class='fa fa-bookmark'></span> Information du pokémon capturé";
  echo "</div> <div class='card-body'>";

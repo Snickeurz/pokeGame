@@ -144,6 +144,9 @@ else
                 case "detail":
                     include("views/market/detailAnnonce.php");
                     break;
+                case "vente_pokemon":
+                    include("controler/VentePokemon.php");
+                    break;
                 /**
                  * Par défaut on effectue aucune action.
                  */
