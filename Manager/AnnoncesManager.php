@@ -52,11 +52,34 @@ class AnnoncesManager
     public static function addAnnonceInDB($vendeur, $pokemon, $prix, $description)
     {
         $monPdo = MonPdo::getInstance();
-        $insert = $monPdo->prepare("INSERT INTO annonces ('vendeur', 'pokemon', 'prix', 'description') VALUES (:vendeur, :pokemon, :prix, :description)");
+        $date = date("Y-m-d");
+        $insert = $monPdo->prepare("INSERT INTO annonces (vendeur, pokemon, prix, description, date) VALUES (:vendeur, :pokemon, :prix, :description, :date)");
         $insert->bindParam(":vendeur", $vendeur, PDO::PARAM_STR);
         $insert->bindParam(":pokemon", $pokemon, PDO::PARAM_STR);
         $insert->bindParam(":prix", $prix, PDO::PARAM_INT);
         $insert->bindParam(":description", $description, PDO::PARAM_STR);
+        $insert->bindParam(":date", $date);
         return $insert->execute();
+    }
+
+    /**
+     * Check si un pokemon est déjà en vente.
+     *
+     * @param string $nomPokemon
+     * @return bool true/false
+     */
+    public static function existAlready($nomPokemon)
+    {
+        $monPdo = MonPdo::getInstance();
+        $count = $monPdo->prepare("SELECT count(*) FROM annonces WHERE pokemon = :pokemon");
+        $count->bindParam(":pokemon", $nomPokemon, PDO::PARAM_STR);
+        $count->execute();
+        if($count->fetchColumn()>0)
+        {
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }
